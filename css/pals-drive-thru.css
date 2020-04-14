@@ -1,0 +1,28 @@
+.masthead{
+    background-image: url('images/ny_comic_con.jpg');
+}
+
+.cube {
+  width: 100px;
+  height: 100px;
+  float:left;
+}
+.cube1{
+    background-color: aqua;
+}
+.cube2{
+  background-color: green;
+}
+.cube3{
+  background-color: silver;
+}
+.cube4{
+  background-color: brown;
+}
+.cube5{
+  background-color: red;
+}
+
+.intro-text{
+  box-sizing: border-box; 
+}
