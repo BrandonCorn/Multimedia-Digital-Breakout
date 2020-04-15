@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Drive Thru Challenge</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel = "stylesheet">
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css" rel = "stylesheet">
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" rel = "stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+  <link href="css/background-overlay.css" rel="stylesheet">
+  <link href="css/pals-drive-thru.css" rel="stylesheet">
+
+
+</head>
+
+<body class = "bg-overlay">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">Data Structures</a>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href="../../fast-food-restaurant.html"> Comic-Con </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="banner" style="margin-bottom: 60px;">
+    <div class="image">
+      <!-- <img class = "img-fluid" src = "images/ny-comic-con.jpg" alt = "Comic-Con Showroom Floor">-->
+    </div>
+  </header>
+
+  <section>
+    <div class = "row">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-4">
+            <a href = "images/socks_enlarged.html"> <img class="img-fluid rounded" src="../../images/scavenger-hunt-comic-con.jpg" alt=""></a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-5">You’ve taken more than you can handle, your first two are free,
+              and when a thief kisses you, count. What am I?</h2>
+            <p><i>Your answer should contain what's on the socks (ex. "Superman Socks" or "Piano Socks")</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class = "row">
+      <div class = "container">
+        <div class = "form-group">
+          <input id = "answer-input" class = "form-control" type = "text" placeholder = "Answer"><br>
+          <button type = "click" id = "answer-button" class = "btn btn-primary btn-md" data-toggle = "popover"
+            data-trigger = "focus" data-placement = "right" data-container = "body"> Submit </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" style = "margin-top: 15px; margin-bottom: 25px;">
+          <div class="">
+            <form id = "form-random-num">
+              <p> To get a hint, pick a number between 1-20. You have 3 attempts </p><br>
+              <div class = "float-left">
+                <input id = "user-num-guess" class = "form-control" type = "text" placeholder = "Number">
+              </div>
+              <div class = "float-right" style = "margin-right: 60px";>
+                <button type = "click" id = "random-number" class = "btn btn-primary btn-md" data-toggle = "popover"
+                  data-trigger = "focus" data-placement = "right" data-container = "body"> Guess Number </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-5">
+            <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px;">
+              <p id = "challenge-hint" class = "invisible"> Hint: On all socks with living things, what do they all have that you don’t see? </p>
+              <p id = "next-story-statement-1" class = "invisible"> Awesome work! Now let's head to Tennesee so we can meet up with Nick! </p>
+              <button type = 'button' id = 'next-page-button'
+                class = 'btn btn-primary btn-lg btn-block invisible' style = "margin-bottom: 50px;"> (Next Challenge) Nolichucky River </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class = "container" style = "margin-bottom: 30px; ">
+      <div class = "row align-items-center">
+        <div class = "col-lg-6 order-lg-1">
+
+        </div>
+        <div class = "col-lg-6 order-lg-2 cube-constraint" style = "padding: 0; margin: 0;">
+          <div class = "draggable-snap-1">
+          <ul id="sortable" style = "padding: 0; margin: 0;">
+              <li class="card text-center cube cube1"><span ></span>Item 7</li>
+              <li class="card text-center cube cube2"><span ></span>Item 7</li>
+              <li class="card text-center cube cube3"><span ></span>Item 7</li>
+              <li class="card text-center cube cube4"><span ></span>Item 7</li>
+              <li class="card text-center cube cube5"><span ></span>Item 7</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script src="js/pals_drive_thru.js"></script>
+</body>
+
+</html>
