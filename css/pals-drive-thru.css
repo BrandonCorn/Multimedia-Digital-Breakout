@@ -1,5 +1,15 @@
-.masthead{
-    background-image: url('images/ny_comic_con.jpg');
+.bg-overlay{
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../images/fast-food-restaurant.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.bg-faded .container {
+  position:relative;
+  z-index:2;
 }
 
 .cube {
@@ -24,5 +34,5 @@
 }
 
 .intro-text{
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
