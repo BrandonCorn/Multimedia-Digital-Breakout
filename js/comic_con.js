@@ -25,7 +25,7 @@ $("#form-random-num").on("submit",function(e){
 });
 
 //prevents number guess from begin submit and refreshing the page
-$("#answer-form").on("submit",function(e){
+$("#form-answer").on("submit",function(e){
   e.preventDefault();
 });
 
