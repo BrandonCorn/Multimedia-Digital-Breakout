@@ -1,3 +1,5 @@
+//import {checkRandomNum} from 'comic_con.js';
+
 //open queue challenge page on button click
 $("#challenge-button").on("click",function(){
   window.location.href="queue_challenge.html";
@@ -7,6 +9,14 @@ $("#challenge-button").on("click",function(){
 $("#queue-resource-button").on("click",function(){
   window.open("https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm");
 });
+
+$("#form-random-num").on("click",function(e){
+  e.preventDefault();
+});
+
+$("#form-answer").on("click",function(e){
+  e.preventDefault();
+})
 
 //set properites of sortable draggable cubes
 $(".cube-constraint").sortable({
@@ -23,4 +33,4 @@ $( function() {
     placeholder: ""
   });
   $( "#sortable" ).disableSelection();
-} );
+});

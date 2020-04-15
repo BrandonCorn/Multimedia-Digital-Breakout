@@ -132,7 +132,7 @@ else{
     $("#challenge-hint").removeClass("invisible");
   }
 }
-}
+};
 
 //validates the answer for correctness, makes visible link to next challenge upon positive validation
 $("#answer-button").on("click",function(){
@@ -152,3 +152,5 @@ $("#answer-button").on("click",function(){
     pop.popover("show");
   }
   });
+
+  //export{checkRandomNum};
