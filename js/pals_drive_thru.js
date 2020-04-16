@@ -86,7 +86,7 @@ function checkRandomNum(){
     }
     else{
       correct = true;
-      pop = $("#random-number").popover({content: "Congratulations, you got it",});
+      pop = $("#random-number").popover({content: "Congratulations, you got it", trigger: "hover", delay: {"hide": 0},});
       pop.popover("show");
       $("#form-random-num").trigger("reset");
       $("#challenge-hint").removeClass("invisible");
