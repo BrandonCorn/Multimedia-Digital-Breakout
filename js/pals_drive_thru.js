@@ -18,31 +18,44 @@ $("#form-answer").on("click",function(e){
   e.preventDefault();
 });
 
-//set properites of sortable draggable cubes
-$(".cube-constraint").sortable({
-  containment: ".cube-constraint",
-  axis: "x",
-  snap: true,
-  opacity: 0.5,
-  cursor: "grabbing",
-  snapTolerance: 30
-});
-//make sure nothing shows in background when sortable is dragged
-$( function() {
-  $( "#sortable" ).sortable({
-    placeholder: ""
-  });
-  $( "#sortable" ).disableSelection();
-});
-
 //constants
 const c = {
   num : Math.floor((Math.random() * 20) + 1),
   count : 0,
   increment : function(){
     this.count++;
-  }
+  },
+  answerCarQueue : ["Black Car", "Red Car", "Green Car", "Blue Car", "Silver Car"]
 };
+
+$( function() {
+  $( "#sortable" ).sortable({
+    placeholder: "",
+    stop: sortableListValidation
+  });
+  $( "#sortable" ).disableSelection();
+});
+
+var sortableListValidation = function(event,ui){
+  var ogCarListElems = $("#sortable").children();
+  //alert(ogCarListElems);
+  var currCarQueue = [];
+  for (const element of ogCarListElems){
+    currCarQueue.push(element.innerHTML);
+  }
+  console.log(validateQueue(currCarQueue));
+};
+
+function validateQueue(elements){
+  var correct = true;
+  for (var i = 0; i < elements.length; i++){
+    if (elements[i] != c.answerCarQueue[i]){
+      correct = false;
+    }
+  }
+  return correct;
+};
+
 
 //upon clicking this button you submit your answer to be analyzed
 //It will be check to make sure it is a digit and is within the range of guesses
