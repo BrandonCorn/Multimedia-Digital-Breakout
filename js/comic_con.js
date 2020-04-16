@@ -99,7 +99,7 @@ var regex = /[0-9 -()+]+$/;
 var numInputForRegex = $("#user-num-guess").val();
 //input validation
 if (c.count >=3){
-  pop = $("#random-number").popover({content: "You have no more guesses left",});
+  pop = $("#random-number").popover({content: "You have no more guesses left", trigger : "hover", delay : {"show" : 500, "hide" : 100},});
   pop.popover("show");
   $("#random-number").prop("disabled",true);
 }

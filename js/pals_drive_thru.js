@@ -59,8 +59,8 @@ function checkRandomNum(){
   var numInputForRegex = $("#user-num-guess").val();
   //input validation
   if (c.count >=3){
-    pop = $("#random-number").popover({content: "You have no more guesses left",});
-    pop.popover("show");
+    pop = $("#random-number").popover({content: "You have no more guesses left", trigger : "hover", delay : {"show" : 500, "hide" : 100},});
+    //pop.popover("show");
     $("#random-number").prop("disabled",true);
   }
   else if (!(regex.test(numInputForRegex))){
