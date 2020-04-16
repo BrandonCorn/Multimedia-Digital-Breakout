@@ -136,6 +136,9 @@ else{
 
 //validates the answer for correctness, makes visible link to next challenge upon positive validation
 $("#answer-button").on("click",function(){
+  checkAnswer();
+});
+function checkAnswer(){
   $("#answer-button").popover("dispose");
   var pop;
   var regexAnswer = /teeth/
@@ -151,6 +154,6 @@ $("#answer-button").on("click",function(){
     pop = $("#answer-button").popover({content: "That's incorrect, try again",});
     pop.popover("show");
   }
-  });
+}
 
   //export{checkRandomNum};
