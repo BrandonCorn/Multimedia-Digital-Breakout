@@ -25,7 +25,8 @@ const c = {
   increment : function(){
     this.count++;
   },
-  answerCarQueue : ["Black Car", "Red Car", "Green Car", "Blue Car", "Silver Car"]
+  answerCarQueue : ["Black Car", "Red Car", "Green Car", "Blue Car", "Silver Car"],
+  code: Math.floor((Math.random() * 899) + 100)
 };
 
 $( function() {
@@ -43,7 +44,9 @@ var sortableListValidation = function(event,ui){
   for (const element of ogCarListElems){
     currCarQueue.push(element.innerHTML);
   }
-  console.log(validateQueue(currCarQueue));
+  if (validateQueue(currCarQueue)){
+    successMessageCode("#success-message");
+  }
 };
 
 function validateQueue(elements){
@@ -55,6 +58,13 @@ function validateQueue(elements){
   }
   return correct;
 };
+
+function successMessageCode(id){
+  const success = ["Great Job,","You did it,", "Perfect,", "Nice Work,"];
+  const i = Math.floor((Math.random() * 4) + 1);
+  $(id).innerHTML = success[i] + "The code is: " + c.code.toString()[0];
+  $(id).removeClass("invisible");
+}
 
 
 //upon clicking this button you submit your answer to be analyzed
