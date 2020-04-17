@@ -64,7 +64,7 @@
       <div class="row align-items-center">
         <div class = "col-lg-6 order-lg-2" style = "padding: 0; margin: 0;">
           <div id = "success-div">
-            <h2 id = "success-message" class = "invisible display-5" style = "color: green;"> well </h2>
+            <h2 id = "sortable-success-message" class = "invisible display-5" style = "color: green;"> well </h2>
           </div>
           <div class = "draggable-snap-1">
           <ul id="sortable" style = "padding: 0; margin: 0;">
@@ -102,13 +102,15 @@
               <input id = "q-1-answer" class = "form-control" type = "text" placeholder = "Answer"><br>
             </div>
             <div class = "float-right" style = "margin-right: 60px;">
-              <button type = "click" role = "button" id = "q-one-button" class = "btn btn-primary btn-md" data-toggle = "popover"
+              <button type = "click" role = "button" id = "q-1-button" class = "btn btn-primary btn-md" data-toggle = "popover"
                 data-trigger = "focus" data-placement = "right" data-container = "body"> Submit </button>
             </div>
           </form>
         </div>
         <div class = "col-lg-6">
-      <!-- answer message goes here -->
+          <div class = "float-left display-5">
+            <h2 id = "q-1-success-message" class = "invisible" style = "color: green"> Well this is embarassing </h2>
+          </div>
         </div>
       </div>
     </div>
@@ -128,6 +130,11 @@
             </div>
           </form>
         </div>
+        <div class = "col-lg-6">
+          <div class = "float-left display-5">
+            <h2 id = "q-2-success-message" class = "invisible" style = "color: green"> What should I do now? </h2>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -138,7 +145,7 @@
     <div class = "row" style = "margin-top: 30px;">
       <div class = "container">
         <form id = "code-form">
-          <h3> Enter the your full code here to move on! </h3>
+          <h3> Enter the full code here to move on! </h3>
           <div class = "form-group">
             <input id = "code-input" class = "form-control" type = "text" placeholder = "Code"><br>
           </div>
@@ -171,10 +178,10 @@
             <div class="p-5">
               <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px;">
                 <p id = "challenge-hint" class = "invisible"> Hint: </p>
-                <p id = "next-story-statement-1" class = "invisible"> You're getting the hang of it!
+                <p id = "next-story-statement-2" class = "invisible"> You're getting the hang of it!
                   Now let's make our way to Colorado to hit the slopes with Adeline! </p>
                 <button type = 'button' id = 'next-page-button'
-                  class = 'btn btn-primary btn-lg btn-block invisible' style = "margin-bottom: 50px;"> (Next Challenge) Nolichucky River </button>
+                  class = 'btn btn-primary btn-lg btn-block invisible' style = "margin-bottom: 50px;"> (Next Stop) Breckenridge Ski Resort</button>
               </div>
             </div>
           </div>
