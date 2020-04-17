@@ -84,11 +84,59 @@
       </div>
     </div>
     </div>
+  </section>
+
+
+  <section>
+  <div class = "row">
+    <div class = "container">
+      <div class = "row align-items-center">
+        <div class = "col-lg-6">
+          <h3> <i>Use the resources link on the previous page.</i> </h3>
+          <form id = "question-1-form">
+            <p> What is one way we can implement queues? </p>
+            <div class = "form-group float-left">
+              <input id = "q-1-answer" class = "form-control" type = "text" placeholder = "Answer"><br>
+            </div>
+            <div class = "float-right" style = "margin-right: 60px;">
+              <button type = "click" role = "button" id = "q-one-button" class = "btn btn-primary btn-md" data-toggle = "popover"
+                data-trigger = "focus" data-placement = "right" data-container = "body"> Submit </button>
+            </div>
+          </form>
+        </div>
+        <div class = "col-lg-6">
+      <!-- answer message goes here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "container">
+      <div class = "row text-align-center">
+        <div class = "col-lg-6">
+          <form id = "question-2-form">
+            <p> What is the name of the method that allows you to view the front of a queue? </p>
+            <div class = "form-group float-left">
+              <input id = "q-2-answer" class = "form-control" type = "text" placeholder = "Answer"><br>
+            </div>
+            <div class = "float-right" style = "margin-right: 60px;">
+              <button type = "click" role = "button" id = "q-2-button" class = "btn btn-primary btn-md" data-toggle = "popover"
+                data-trigger = "focus" data-placement = "right" data-container = "body"> Submit </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+  <section>
     <div class = "row">
       <div class = "container">
-        <form id = "form-answer">
+        <form id = "code-form">
           <div class = "form-group">
-            <input id = "answer-input" class = "form-control" type = "text" placeholder = "Code"><br>
+            <input id = "code-input" class = "form-control" type = "text" placeholder = "Code"><br>
           </div>
           <div class = "button-div">
             <button type = "click" role = "button" id = "answer-button" class = "btn btn-primary btn-md" data-toggle = "popover"
@@ -97,11 +145,12 @@
         </form>
       </div>
     </div>
+
     <div class = "row">
       <div class = "container">
         <div class="row align-items-center">
           <div class="col-lg-6" style = "margin-top: 15px; margin-bottom: 25px;">
-            <div class="">
+        <!--    <div class=""> -->
               <form id = "form-random-num">
                 <p> To get a hint, pick a number between 1-20. You have 3 attempts </p><br>
                 <div class = "float-left">
@@ -112,13 +161,14 @@
                   data-toggle = "popover" data-trigger = "focus" data-placement = "right" data-container = "body"> Guess Number </button>
                 </div>
               </form>
-            </div>
+          <!--  </div> -->
           </div>
           <div class="col-lg-6">
             <div class="p-5">
               <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px;">
-                <p id = "challenge-hint" class = "invisible"> Hint: On all socks with living things, what do they all have that you don’t see? </p>
-                <p id = "next-story-statement-1" class = "invisible"> Awesome work! Now let's head to Tennesee so we can meet up with Nick! </p>
+                <p id = "challenge-hint" class = "invisible"> Hint: </p>
+                <p id = "next-story-statement-1" class = "invisible"> You're getting the hang of it!
+                  Now let's make our way to Colorado to hit the slopes with Adeline! </p>
                 <button type = 'button' id = 'next-page-button'
                   class = 'btn btn-primary btn-lg btn-block invisible' style = "margin-bottom: 50px;"> (Next Challenge) Nolichucky River </button>
               </div>
