@@ -10,6 +10,10 @@ $("#queue-resource-button").on("click",function(){
   window.open("https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm");
 });
 
+$("#next-page-button").on("click",function(){
+  window.location.href = "binary_tree_breckenridge.html"
+});
+
 //prevent form submission of question 1 answer
 $("#question-1-form").on("click",function(e){
   e.preventDefault();
@@ -39,10 +43,17 @@ const c = {
   },
   answers : {
     answerCarQueue : ["Black Car", "You", "Blue Car", "Red Truck", "Silver Car"],
-    q1 : ["arrays", "linked-lists", "pointers", "structures"],
+    q1 : new RegExp("(linked(-| )\?lists\?)|(arrays\?)|(pointers\?)|(structures\?)","gi"),
     q2 : "peek"
   },
-  code : Math.floor((Math.random() * 899) + 100)
+  code : Math.floor((Math.random() * 899) + 100),
+  mID: {
+    a: "#sortable-success-message",
+    b: "#q-1-success-message",
+    c: "#q-2-success-message",
+    d: "#code-success-message",
+    e: "#next-story-statement-2"
+  }
 };
 
 //make list sortable
@@ -63,9 +74,22 @@ var sortableListValidation = function(event,ui){
     currCarQueue.push(element.innerHTML);
   }
   if (ValidateQueue(currCarQueue)){
-    SuccessMessageCode("#success-message",0);
+    SuccessMessageCode(c.mID.a,0);
   }
 };
+
+//creates a random success message for the queue completion
+function SuccessMessageCode(id,pos){
+  const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
+  const i = Math.floor((Math.random() * 4));
+  $(id).text(success[i] + "The code is: " + c.code.toString()[pos]);
+  $(id).removeClass("invisible");
+}
+
+function FailureMessage(id){
+  $(id.text("That's not right, try again"));
+  $(id).removeClass("Invisible");
+}
 
 //returns true if all elments in the queue are in the correct order
 function ValidateQueue(elements){
@@ -78,29 +102,44 @@ function ValidateQueue(elements){
   return correct;
 }
 
-//creates a random success message for the queue completion
-function SuccessMessageCode(id,pos){
-  const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
-  const i = Math.floor((Math.random() * 4) + 1);
-  $(id).text(success[i] + "The code is: " + c.code.toString()[pos]);
-  $(id).removeClass("invisible");
+//validate question 1
+$("#q-1-button").on("click",function(){
+  if (ValidateQuestionOne()){
+    SuccessMessageCode(c.mID.b,1);
+  }
+  else { FailureMessage()}
+});
+//validation uses regex
+function ValidateQuestionOne(){
+  const check = $("#q-1-answer").val();
+  return c.answers.q1.test(check);
 }
 
-//validate question 1
+//validate question 2
 $("#q-2-button").on("click",function(){
-  ValidateQuestionTwo();
+  if (ValidateQuestionTwo()){
+    SuccessMessageCode(c.mID.c,2);
+  }
 });
 
 function ValidateQuestionTwo(){
   if (c.answers.q2 == $("#q-2-answer").val().toLowerCase()){
-    console.log(true);
+    return true;
   }
-  else {
-    console.log(false);
-  }
+  else {return false;}
 }
 
+$("#code-button").on("click",function(){
+  ValidateCodeInput("#code-input");
+});
 
+function ValidateCodeInput(id){
+  var a = parseInt($(id).val());
+  if (c.code == a){
+    $(c.mID.e).removeClass("invisible");
+    $("#next-page-button").removeClass("invisible");
+  }
+}
 //button click calls checkRandom to validate user answer for hint
 $("#random-number").on('click',function(){
   CheckRandomNum();
