@@ -25,7 +25,7 @@ const c = {
   increment : function(){
     this.count++;
   },
-  answerCarQueue : ["Black Car", "Red Car", "Green Car", "Blue Car", "Silver Car"],
+  answerCarQueue : ["Black Car", "You", "Blue Car", "Red Truck", "Silver Car"],
   code: Math.floor((Math.random() * 899) + 100)
 };
 
