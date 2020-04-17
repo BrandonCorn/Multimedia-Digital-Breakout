@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Pals Drive Thru Queue</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel = "stylesheet">
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css" rel = "stylesheet">
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css" rel = "stylesheet">
+
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html"> Data Structures </a>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href= "linked_list_comic_con.html"> Comic-Con </a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href="queue_drive_thru.html"> Pal's </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="banner" style="margin-bottom: 60px;">
+    <div class="image">
+      <img class = "img-fluid" src = "images/fast-food-restaurant.jpg" alt = "Comic-Con Showroom Floor">
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="text-center border border-primary p-5 rounded-lg">
+          <p>
+            &emsp;On their way through Tennessee, the gang makes their next stop by the Nolichucky River to pick up “good buddy” Nick. He’s
+            known as “good buddy” Nick because he calls everyone good buddy. After picking him up everyone decides they’re starving and
+            need some food asap. Good buddy Nick mentions the go-to must-have place that you can’t get anywhere else is Pal’s. Pal’s is a
+            drive-thru burger joint that only has locations in Tennessee. Everyone agrees on the place and off they go.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-4">
+            <img class="img-fluid rounded-circle" src="images/ny-restaurant.jpg" alt="New York restaurant line">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">When they arrive...</h2>
+            <p>
+              at Pal’s they notice there is an extremely long line, or queue. This is the perfect time to
+              introduce the next data structure, Queues.  A Queue is a first-in first-out structure that maintains a list of objects,
+              adding and removing them in a specific way. When we add objects to a Queue, we “queue” them, which means to add them to
+              the end of the list. To remove objects from a Queue, we “dequeue” them, which is to remove the objects at the front of the
+              list.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="images/queue-louis-vuitton.jpg" alt="Line at Louis Vuitton">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">Our place...</h2>
+            <p>
+              in the drive-thru is a perfect example of how a Queue works. By entering the drive-thru, we have queued ourselves,
+              or joined the line of cars at the end of the line. Each time the car at the front of the line receives their order, they are
+              dequeued, meaning they are leaving the line. Each time a car leaves the line, the car after that becomes the new front of
+              the line. Just like normal lines at places like this or the grocery store, you can’t enter the line at any position. Also, like
+              waiting in a normal line you can’t just choose to cut in front of whoever is in front of you, they must be tended to first
+              and you must wait until you are at the front.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class = "container" style = "margin-bottom: 30px; ">
+      <div class = "row align-items-center">
+        <div class = "col-lg-6 order-lg-2">
+          <div class = "text-center">
+            <button type = "button" id = "queue-resource-button" class = "btn btn-primary btn-lg"> Queue Resource </button>
+          </div>
+        </div>
+        <div class = "col-lg-6 order-lg-2">
+          <div class = "text-center">
+            <button type = "button" id = "challenge-button" class = "btn btn-primary btn-lg"> Queue Challenge </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="js/pals_drive_thru.js"></script>
+
+</body>
+
+</html>
