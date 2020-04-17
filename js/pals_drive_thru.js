@@ -60,9 +60,9 @@ function validateQueue(elements){
 };
 
 function successMessageCode(id){
-  const success = ["Great Job,","You did it,", "Perfect,", "Nice Work,"];
+  const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
   const i = Math.floor((Math.random() * 4) + 1);
-  $(id).innerHTML = success[i] + "The code is: " + c.code.toString()[0];
+  $(id).text(success[i] + "The code is: " + c.code.toString()[0]);
   $(id).removeClass("invisible");
 }
 
