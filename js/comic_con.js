@@ -41,52 +41,6 @@ const c = {
 //upon clicking this button you submit your answer to be analyzed
 //It will be check to make sure it is a digit and is within the range of guesses
 //Once validation is accepted, input is compared.
-/* $("#random-number").on("click",function(){
-  $("#random-number").popover("dispose");
-  var pop;
-  var correct = false;
-  var regex = /[0-9 -()+]+$/;
-  var numInputForRegex = $("#user-num-guess").val();
-  //input validation
-  if (c.count >=3){
-    pop = $("#random-number").popover({content: "You have no more guesses left",});
-    pop.popover("show");
-    $("#random-number").prop("disabled",true);
-  }
-  else if (!(regex.test(numInputForRegex))){
-    pop = $("#random-number").popover({content: "Not a valid entry, enter a number",});
-    pop.popover("show");
-  }
-  else if (numInputForRegex > 20 || numInputForRegex < 0){
-    pop = $("#random-number").popover({content: "Not a valid entry, number must be between 1 and 20",});
-    pop.popover("show");
-  }
-  else{
-    c.increment();
-    var userNum = parseInt($("#user-num-guess").val());
-    if(userNum < c.num){
-      pop = $("#random-number").popover({content: userNum + " is lower than the random number",});
-      pop.popover("show");
-      $("#form-random-num").trigger("reset");
-    }
-    else if (userNum > c.num){
-      pop = $("#random-number").popover({content: userNum + " is higher than the random number",});
-      pop.popover("show");
-      $("#form-random-num").trigger("reset");
-    }
-    else{
-      correct = true;
-      pop = $("#random-number").popover({content: "Congratulations, you got it",});
-      pop.popover("show");
-      $("#form-random-num").trigger("reset");
-      $("#challenge-hint").removeClass("invisible");
-    }
-  }
-}); */
-
-//upon clicking this button you submit your answer to be analyzed
-//It will be check to make sure it is a digit and is within the range of guesses
-//Once validation is accepted, input is compared.
 $("#random-number").on('click',function(){
   checkRandomNum();
 });
@@ -101,6 +55,8 @@ var numInputForRegex = $("#user-num-guess").val();
 if (c.count >=3){
   pop = $("#random-number").popover({content: "You have no more guesses left", trigger : "hover", delay : {"show" : 500, "hide" : 100},});
   pop.popover("show");
+  //pop = $("#random-number").popover({content: "You have no more guesses left", trigger : "hover", delay : {"hide" : 0},});
+  //pop.popover("show");
   $("#random-number").prop("disabled",true);
 }
 else if (!(regex.test(numInputForRegex))){
