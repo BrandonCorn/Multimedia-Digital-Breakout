@@ -825,7 +825,8 @@
 }(document, jQuery, wordfind));
 
 $(function () {
-  var words = ['binary','parent','children','avl','traversal','node','tree','decision','preorder','postorder','inorder'];
+  var words = ['binary','parent','children','avl','traversal','node','tree','decision','preorder','postorder','inorder',
+  'leaf', 'complete', 'full'];
   // start a word find game
   var gamePuzzle = wordfindgame.create(
     words,
