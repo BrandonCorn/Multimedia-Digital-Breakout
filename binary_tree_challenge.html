@@ -66,7 +66,8 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="puzzleWrap">
-          <p>Binary Tree Word Search</p>
+          <h1 class = 'display-5'>Binary Tree Word Search</h1><br>
+          <p><i>Simply click and drag across the letters when you find a word. </i></p>
           <div id='puzzle'></div>
           <div id='words'>
 
@@ -78,10 +79,39 @@
   </section>
 
   <section>
+    <div class = "row">
+      <div class = "container">
+        <div class = "row align-items-center">
+          <div class = "col-lg-6">
+            <h3> <i>Use the resources link. </i> </h3>
+            <form id = "question-1-form">
+              <p> Once you have your code and viewed the link, let us assume that the numbers are in PreOrder format.
+                Can you rearrange them to reflect PostOrder? You'll need to "in order" to continue!.  </p>
+              <div class = "form-group float-left">
+                <input id = "postorder-code-input" class = "form-control" type = "text" placeholder = "PostOrder Code"><br>
+              </div>
+              <div class = "float-right" style = "margin-right: 60px;">
+                <button type = "click" role = "button" id = "postorder-code-button" class = "btn btn-primary btn-md" data-toggle = "popover"
+                  data-trigger = "focus" data-placement = "right" data-container = "body"> Submit </button>
+              </div>
+            </form>
+          </div>
+          <div class = "col-lg-6">
+            <div class = "float-left display-5">
+              <h2 id = "postorder-success-message" class = "invisible" style = "color: green"> Well this is embarassing </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
     <div class = "row" style = "margin-top: 30px;">
       <div class = "container">
         <form id = "code-form">
-          <h3> Enter the full code here to move on! </h3>
+          <h3> Finally, use the  </h3>
           <div class = "form-group">
             <input id = "code-input" class = "form-control" type = "text" placeholder = "Code"><br>
           </div>
@@ -92,7 +122,6 @@
         </form>
       </div>
     </div>
-
     <div class = "row">
       <div class = "container">
         <div class="row align-items-center">
@@ -135,7 +164,7 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+  <script src="js/breckenridge.js"></script>
   <script src="js/word-search.js"></script>
 </body>
 
