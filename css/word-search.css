@@ -5,11 +5,19 @@
 * For all details and documentation:
 *     https://github.com/bunkat/wordfind
 */
+.bg-overlay{
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../images/daniel-frank.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 50px;
+}
 
-$dkBlue: #306a8b;
-$ltblue: #6891ad;
-$red: #ee5426;
-$lightGrey: #c4c4c4;
+.bg-faded .container {
+  position:relative;
+  z-index:2;
+}
 
 body {
   background: $dkBlue;
