@@ -13,30 +13,17 @@ $("#postorder-code-form").on("submit",function(e){
 var Preorder = function(code){
   var arr = code.toString().split("");
   var newArr = [];
-  var temp = [arr[0]];
-  var n = 0;
-  while(temp.length > 0 && n < 10){
-    var a = temp.pop();
-    newArr.push(a);
-    console.log("arr: " + arr);
-    console.log("a: " + a);
-    var b = arr.indexOf(a);
-    console.log("b:" + b);
+  newArr = PreorderHelper(arr,0,newArr);
+  return parseInt(newArr.join(""));
+}
 
-    if (((b*2) + 2) < arr.length){
-      temp.push(arr[(b*2)+2]);
-      console.log("madeit2");
-    }
-    if (((b*2)+1) < arr.length){
-      temp.push(arr[(b*2)+1])
-      console.log("madeit1");
-    }
-    console.log("newArr: " + newArr);
-    console.log("temp: " + temp);
-    console.log(temp.length);
-    n++;
+function PreorderHelper(a,b,c){
+  if(b < a.length){
+    c.push(a[b]);
+    c = PreorderHelper(a, (b*2)+1,c);
+    c = PreorderHelper(a, (b*2)+2,c);
   }
-  return parseInt(newArr.join());
+  return c;
 }
 
 const ob = function(){
@@ -51,10 +38,9 @@ const ob = function(){
 const c = new ob();
 
 function ValidatePreOrder(input){
-  console.log(input + " " + c.preorder());
-  return input == c.preorder;
+  return input == c.preorder();
 }
 
 $("#preorder-code-button").on("click",function(){
   console.log(ValidatePreOrder($("#preorder-code-input").val()));
-})
+}); 
