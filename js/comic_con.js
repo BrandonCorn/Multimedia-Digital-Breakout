@@ -94,17 +94,23 @@ else{
 $("#answer-button").on("click",function(){
   checkAnswer();
 });
+
+
 function checkAnswer(){
-  $("#answer-button").popover("dispose");
+  var pop;
   var pop;
   var regexAnswer = /teeth/
   var answerInput = $("#answer-input").val().toLowerCase();
   if (regexAnswer.test(answerInput)){
-    pop = $("#answer-button").popover({content: "That's correct, great job!",});
-    pop.popover("show");
     $("#challenge-hint").addClass("invisible");
-    $("#next-page-button").removeClass("invisible");
-    $("#next-story-statement-1").removeClass("invisible");
+    Swal.fire({
+      title: 'Great Job!',
+      text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
+      icon:'success',
+    }).then(function(result){
+      window.location.href="queue_drive_thru.html";
+    });
+
   }
   else{
     pop = $("#answer-button").popover({content: "That's incorrect, try again",});
