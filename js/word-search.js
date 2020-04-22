@@ -706,6 +706,7 @@
 
         if (wordList.length === 0) {
           $('.puzzleSquare').addClass('complete');
+          SuccessMessageCode("#word-search-complete");
         }
       }
 
@@ -805,13 +806,12 @@
               var nextPos = next(x, y, j);
               $('[x="' + nextPos.x + '"][y="' + nextPos.y + '"]').addClass('solved');
             }
-
             $('.' + word).addClass('wordFound');
           }
         }
 
         $('#solve').addClass('gameSolved');
-
+        SuccessMessageCode("#word-search-complete");
       }
     };
   };
