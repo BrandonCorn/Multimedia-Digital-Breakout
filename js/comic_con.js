@@ -14,11 +14,6 @@ $("#challenge-button").on('click',function(){
   window.location.href = "sock_challenge.html";
 });
 
-//button to open the drive thru story link
-$("#next-page-button").on("click",function(){
-  window.location.href = "queue_drive_thru.html";
-});
-
 //prevents answers to sock challenge from being submit and refreshing the page
 $("#form-random-num").on("submit",function(e){
   e.preventDefault();
@@ -88,6 +83,7 @@ else{
     $("#challenge-hint").removeClass("invisible");
   }
 }
+$('#form-random-num').trigger('reset');
 };
 
 //validates the answer for correctness, makes visible link to next challenge upon positive validation
@@ -116,6 +112,5 @@ function checkAnswer(){
     pop = $("#answer-button").popover({content: "That's incorrect, try again",});
     pop.popover("show");
   }
+  $('#form-answer').trigger('reset');
 }
-
-  //export{checkRandomNum};
