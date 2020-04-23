@@ -43,7 +43,7 @@ function Code(size){
   return parseInt(arr.join(""));
 }
 
-//shuffles elements of an array without repeating them 
+//shuffles elements of an array without repeating them
 function Shuffle(arr){
   var i = arr.length;
   var j, temp;
@@ -72,14 +72,14 @@ $("#preorder-code-button").on("click",function(){
   const id = "#preorder-success-message";
   var pop;
   if (ValidatePreOrder($("#preorder-code-input").val())){
-    pop = $('#preorder-code-form').popover({content: "You got it, great work!!",});
+    pop = $('#preorder-code-button').popover({content: "You got it, great work!!",});
     pop.show('show');
   }
   else{
-    pop = $('#preorder-code-form').popover({content: "Try again!!",})
+    pop = $('#preorder-code-button').popover({content: "Try again!!",})
     pop.popover('show');
   }
-  $(id).removeClass("invisible");
+  //$(id).removeClass("invisible");
 });
 
 function SuccessMessageCode(id, pos = 0){
