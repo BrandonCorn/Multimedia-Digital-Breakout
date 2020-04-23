@@ -10,10 +10,6 @@ $("#queue-resource-button").on("click",function(){
   window.open("https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm");
 });
 
-$("#next-page-button").on("click",function(){
-  window.location.href = "binary_tree_breckenridge.html"
-});
-
 //prevent form submission of question 1 answer
 $("#question-1-form").on("click",function(e){
   e.preventDefault();
@@ -33,6 +29,7 @@ $("#form-random-num").on("click",function(e){
 $("#code-form").on("click",function(e){
   e.preventDefault();
 });
+
 
 //constants
 const c = {
@@ -86,10 +83,6 @@ function SuccessMessageCode(id,pos){
   $(id).removeClass("invisible");
 }
 
-function FailureMessage(id){
-  $(id.text("That's not right, try again"));
-  $(id).removeClass("Invisible");
-}
 
 //returns true if all elments in the queue are in the correct order
 function ValidateQueue(elements){
@@ -104,10 +97,15 @@ function ValidateQueue(elements){
 
 //validate question 1
 $("#q-1-button").on("click",function(){
+  var pop = $('#q-1-button').popover({content: "Try again", });
   if (ValidateQuestionOne()){
+    pop.popover("dispose");
     SuccessMessageCode(c.mID.b,1);
   }
-  else { FailureMessage()}
+  else {
+    pop.popover('show');
+    $('#question-1-form').trigger('reset');
+    }
 });
 //validation uses regex
 function ValidateQuestionOne(){
@@ -115,13 +113,20 @@ function ValidateQuestionOne(){
   return c.answers.q1.test(check);
 }
 
-//validate question 2
+//provides output based on validation of question 2
 $("#q-2-button").on("click",function(){
+  var pop = $('#q-2-button').popover({content: "Try again!",});
   if (ValidateQuestionTwo()){
+    pop.popover("dispose");
     SuccessMessageCode(c.mID.c,2);
+  }
+  else{
+    pop.popover("show");
+    $('#question-2-form').trigger('reset');
   }
 });
 
+//validates question 2
 function ValidateQuestionTwo(){
   if (c.answers.q2 == $("#q-2-answer").val().toLowerCase()){
     return true;
@@ -129,17 +134,31 @@ function ValidateQuestionTwo(){
   else {return false;}
 }
 
+//calls function to validate code input
 $("#code-button").on("click",function(){
   ValidateCodeInput("#code-input");
 });
 
+//validates the full code assembled by answering all questions
 function ValidateCodeInput(id){
   var a = parseInt($(id).val());
   if (c.code == a){
-    $(c.mID.e).removeClass("invisible");
-    $("#next-page-button").removeClass("invisible");
+      Swal.fire({
+        title:'Great work!',
+        text:'You\'re getting the hang of it! Now let\'s make our way to Colorado to hit the slopes with Adeline!',
+        icon:'success'
+    }).then(function(){
+      window.location.href = 'binary_tree_breckenridge.html';
+    });
+  }
+  else {
+    var pop = $('#code-button').popover({content: "Try again!",});
+    pop.popover("show");
+    $('#code-form').trigger("reset");
   }
 }
+
+
 //button click calls checkRandom to validate user answer for hint
 $("#random-number").on('click',function(){
   CheckRandomNum();
@@ -173,20 +192,18 @@ function CheckRandomNum(){
     if(userNum < c.num){
       pop = $("#random-number").popover({content: userNum + " is lower than the random number",});
       pop.popover("show");
-      $("#form-random-num").trigger("reset");
     }
     else if (userNum > c.num){
       pop = $("#random-number").popover({content: userNum + " is higher than the random number",});
       pop.popover("show");
-      $("#form-random-num").trigger("reset");
     }
     else{
       correct = true;
       pop = $("#random-number").popover({content: "Congratulations, you got it", trigger: "hover", delay: {"hide": 0},});
       pop.popover("show");
-      $("#form-random-num").trigger("reset");
       $("#challenge-hint").text("Hint: The second digit of the code is " + c.code.toString()[1]);
       $("#challenge-hint").removeClass("invisible");
     }
   }
+  $("#form-random-num").trigger("reset");
 };
