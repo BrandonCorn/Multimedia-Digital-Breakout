@@ -146,7 +146,7 @@
         <form id = "code-form">
           <h3> Enter the full code here to move on! </h3>
           <div class = "form-group">
-            <input id = "code-input" class = "form-control" type = "text" placeholder = "Code"><br>
+            <input id = "code-input" class = "form-control" type = "text" placeholder = "Code (ex. 123)"><br>
           </div>
           <div class = "button-div">
             <button type = "click" role = "button" id = "code-button" class = "btn btn-primary btn-md" data-toggle = "popover"
@@ -175,12 +175,8 @@
           </div>
           <div class="col-lg-6">
             <div class="p-5">
-              <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px;">
+              <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px; margin-bottom: 100px;">
                 <p id = "challenge-hint" class = "invisible"> Hint: </p>
-                <p id = "next-story-statement-2" class = "invisible"> You're getting the hang of it!
-                  Now let's make our way to Colorado to hit the slopes with Adeline! </p>
-                <button type = 'button' id = 'next-page-button'
-                  class = 'btn btn-primary btn-lg btn-block invisible' style = "margin-bottom: 50px;"> (Next Stop) Breckenridge Ski Resort</button>
               </div>
             </div>
           </div>
@@ -203,11 +199,13 @@
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="js/pals_drive_thru.js"></script>
+
 </body>
 
 </html>

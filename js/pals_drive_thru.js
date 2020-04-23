@@ -86,10 +86,6 @@ function SuccessMessageCode(id,pos){
   $(id).removeClass("invisible");
 }
 
-function FailureMessage(id){
-  $(id.text("That's not right, try again"));
-  $(id).removeClass("Invisible");
-}
 
 //returns true if all elments in the queue are in the correct order
 function ValidateQueue(elements){
@@ -104,10 +100,14 @@ function ValidateQueue(elements){
 
 //validate question 1
 $("#q-1-button").on("click",function(){
+  var pop = $('#q-1-button').popover({content: "Try again", });
   if (ValidateQuestionOne()){
+    pop.popover("dispose");
     SuccessMessageCode(c.mID.b,1);
   }
-  else { FailureMessage()}
+  else {
+    pop.popover('show');
+    }
 });
 //validation uses regex
 function ValidateQuestionOne(){
@@ -115,13 +115,19 @@ function ValidateQuestionOne(){
   return c.answers.q1.test(check);
 }
 
-//validate question 2
+//provides output based on validation of question 2
 $("#q-2-button").on("click",function(){
+  var pop = $('#q-2-button').popover({content: "Try again!",});
   if (ValidateQuestionTwo()){
+    pop.popover("dispose");
     SuccessMessageCode(c.mID.c,2);
+  }
+  else{
+    pop.popover("show");
   }
 });
 
+//validates question 2
 function ValidateQuestionTwo(){
   if (c.answers.q2 == $("#q-2-answer").val().toLowerCase()){
     return true;
@@ -129,10 +135,12 @@ function ValidateQuestionTwo(){
   else {return false;}
 }
 
+//calls function to validate code input
 $("#code-button").on("click",function(){
-  ValidateCodeInput("#code-input");
+  ValidateCodeInput2("#code-input");
 });
 
+//validates the full code assembled by answering all questions
 function ValidateCodeInput(id){
   var a = parseInt($(id).val());
   if (c.code == a){
@@ -140,6 +148,21 @@ function ValidateCodeInput(id){
     $("#next-page-button").removeClass("invisible");
   }
 }
+
+function ValidateCodeInput2(id){
+  var a = parseInt($(id).val());
+  if (c.code == a){
+      Swal.fire({
+        title:'Great work!',
+        text:'You\'re getting the hang of it! Now let\'s make our way to Colorado to hit the slopes with Adeline!',
+        icon:'success'
+    }).then(function(){
+      window.location.href = 'binary_tree_breckenridge.html';
+    });
+  }
+}
+
+
 //button click calls checkRandom to validate user answer for hint
 $("#random-number").on('click',function(){
   CheckRandomNum();
