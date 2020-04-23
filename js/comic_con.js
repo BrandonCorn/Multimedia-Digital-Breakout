@@ -68,12 +68,11 @@ else{
   if(userNum < c.num){
     pop = $("#random-number").popover({content: userNum + " is lower than the random number",});
     pop.popover("show");
-    $("#form-random-num").trigger("reset");
+
   }
   else if (userNum > c.num){
     pop = $("#random-number").popover({content: userNum + " is higher than the random number",});
     pop.popover("show");
-    $("#form-random-num").trigger("reset");
   }
   else{
     correct = true;
