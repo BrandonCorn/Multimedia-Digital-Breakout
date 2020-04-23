@@ -28,6 +28,7 @@ function PreorderHelper(a,b,c){
 function ValidatePreOrder(input){
   console.log(input + " " + c.preorder());
   return input == c.preorder();
+
 }
 
 //creates a code of given size with no repeated numbers, shuffles, and returns them
@@ -68,11 +69,12 @@ const c = new ob();
 
 
 $("#preorder-code-button").on("click",function(){
+  $("#preorder-code-button").popover("dispose"); 
   const id = "#preorder-success-message";
   var pop;
   if (ValidatePreOrder($("#preorder-code-input").val())){
     pop = $('#preorder-code-button').popover({content: "You got it, great work!!",});
-    pop.show('show');
+    pop.popover('show');
   }
   else{
     pop = $('#preorder-code-button').popover({content: "Try again!!",})
@@ -80,6 +82,7 @@ $("#preorder-code-button").on("click",function(){
     $("#preorder-code-form").trigger("reset");
   }
   //$(id).removeClass("invisible");
+  ValidatePreOrder($("#preorder-code-input").val());
 });
 
 function SuccessMessageCode(id, pos = 0){
