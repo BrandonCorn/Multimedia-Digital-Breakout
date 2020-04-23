@@ -2,10 +2,6 @@ $("#preorder-code-form").on("submit",function(e){
   e.preventDefault();
 });
 
-$("#traversal-resource-button").on("click",function(){
-  window.open("https://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm","blank");
-});
-
 $("#postorder-code-form").on("submit",function(e){
   e.preventDefault();
 });
@@ -54,6 +50,8 @@ function Shuffle(arr){
     arr[i] = temp;
   }
 }
+
+
 //constants
 const ob = function(){
   return {
@@ -78,6 +76,7 @@ $("#preorder-code-button").on("click",function(){
   else{
     pop = $('#preorder-code-button').popover({content: "Try again!!",})
     pop.popover('show');
+    $("#preorder-code-form").trigger("reset");
   }
   //$(id).removeClass("invisible");
 });
