@@ -69,12 +69,19 @@ const c = new ob();
 
 
 $("#preorder-code-button").on("click",function(){
-  $("#preorder-code-button").popover("dispose"); 
+  $("#preorder-code-button").popover("dispose");
   const id = "#preorder-success-message";
   var pop;
   if (ValidatePreOrder($("#preorder-code-input").val())){
-    pop = $('#preorder-code-button').popover({content: "You got it, great work!!",});
-    pop.popover('show');
+    //pop = $('#preorder-code-button').popover({content: "You got it, great work!!",});
+    //pop.popover('show');
+    Swal.fire({
+      title:'Awesome',
+      text: 'Let\'s head out to meet up with Lily at Amoeba Record Store in San Franciso!',
+      icon: 'success'
+    }).then(function(){
+      window.location.href = "https://google.com";
+    });
   }
   else{
     pop = $('#preorder-code-button').popover({content: "Try again!!",})
