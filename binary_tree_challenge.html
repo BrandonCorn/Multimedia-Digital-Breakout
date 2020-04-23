@@ -81,27 +81,25 @@
       <div class = "container">
         <div class = "row align-items-center">
           <div class = "col-lg-6">
-            <div class = "float-left">
-            <h3 class = "float-left"> <i>Use this link for guidance. </i> </h3>
-            <button type = "click" role = "button" id = "traversal-resource-button" class = "btn btn-primary btn-md float-right"> Traversal Resource </button>
-            <div class = "form-div" style = "margin-top: 40px;">
-            <form id = "preorder-code-form"> <br><br>
-              <p> Once you have the code, let's assume the digits of the code are in level order format.
-                Can you rearrange them to preorder? You'll need to "in order" to continue!.
-                  <i> (Enter the code in preorder with no commas or spaces.)</i></p>
-              <div class = "form-group float-left">
-                <input id = "preorder-code-input" class = "form-control" type = "text" placeholder = "Preorder Code"><br>
+            <h3 class = "float-left"> <i>Use this <a href = "https://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm" target="blank">link</a> for guidance. </i> </h3>
+            <form id = "preorder-code-form">
+              <br><br>
+                <p> Once you have the code, let's assume the digits of the code are in level order format.
+                  Can you rearrange them to preorder? You'll need to "in order" to continue!.
+                    <i> (Enter the code in preorder with no commas or spaces.)</i></p>
+              <div class = "float-left">
+                <input id = "preorder-code-input" class = "form-control" type = "text" placeholder = "Preorder (ex.234165)" autocomplete="off">
               </div>
 
               <div class = "float-right" style = "margin-right: 60px;">
-                <button type = "click" role = "button" id = "preorder-code-button" class = "btn btn-primary btn-md"> Submit </button>
+                <button type = "click" role = "button" id = "preorder-code-button" class = "btn btn-primary btn-md"
+                data-toggle="popover" data-placement="right" data-container="body"> Submit </button>
               </div>
             </form>
-            </div>
           </div>
-          </div>
+
           <div class = "col-lg-6">
-            <div class = "float-left display-5">
+            <div class = "display-5">
               <h2 id = "preorder-success-message" class = "invisible" style = "color: green"> Well this is embarassing! </h2>
             </div>
           </div>
@@ -112,15 +110,17 @@
 
 
   <section>
-    <div class = "row">
+    <div class = "row" style = "margin-top:50px;">
       <div class = "container">
-        <form id = "postorder-code-form">
-          <h3> Finally, use the  </h3>
+        <form id = "inorder-code-form">
+          <h3> Use this <a href="https://visualgo.net/bn/bst"target="blank">link</a> for the final challenge.</h3>
+          <p> Using the link provided, you'll can create a Binary Search tree with the digits from the preorder code in the last problem.
+              Once you've created it, use the inorder traversal option to get the digits in inorder. Provide the code in that order to complete the challenge! (You can draw the tree by hand if it's easier!)</p>
           <div class = "form-group">
-            <input id = "postorder-code-input" class = "form-control" type = "text" placeholder = "Code"><br>
+            <input id = "inorder-code-input" class = "form-control" type = "text" placeholder = "Code" autocomplete="off"><br>
           </div>
           <div class = "button-div">
-            <button type = "click" role = "button" id = "postorder-code-button" class = "btn btn-primary btn-md" data-toggle = "popover"
+            <button type = "click" role = "button" id = "inorder-code-button" class = "btn btn-primary btn-md" data-toggle = "popover"
               data-trigger = "focus" data-placement = "right" data-container = "body"> Submit </button>
           </div>
         </form>
