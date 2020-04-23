@@ -10,10 +10,6 @@ $("#queue-resource-button").on("click",function(){
   window.open("https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm");
 });
 
-$("#next-page-button").on("click",function(){
-  window.location.href = "binary_tree_breckenridge.html"
-});
-
 //prevent form submission of question 1 answer
 $("#question-1-form").on("click",function(e){
   e.preventDefault();
