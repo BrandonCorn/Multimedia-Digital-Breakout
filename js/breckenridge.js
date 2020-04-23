@@ -26,6 +26,7 @@ function PreorderHelper(a,b,c){
 
 //validates that user provided code correctly in preorder format
 function ValidatePreOrder(input){
+  console.log(input + " " + c.preorder());
   return input == c.preorder();
 }
 
