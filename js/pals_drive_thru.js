@@ -30,6 +30,7 @@ $("#code-form").on("click",function(e){
   e.preventDefault();
 });
 
+
 //constants
 const c = {
   num : Math.floor((Math.random() * 20) + 1),
@@ -103,6 +104,7 @@ $("#q-1-button").on("click",function(){
   }
   else {
     pop.popover('show');
+    $('#question-1-form').trigger('reset');
     }
 });
 //validation uses regex
@@ -120,6 +122,7 @@ $("#q-2-button").on("click",function(){
   }
   else{
     pop.popover("show");
+    $('#question-2-form').trigger('reset');
   }
 });
 
@@ -133,19 +136,11 @@ function ValidateQuestionTwo(){
 
 //calls function to validate code input
 $("#code-button").on("click",function(){
-  ValidateCodeInput2("#code-input");
+  ValidateCodeInput("#code-input");
 });
 
 //validates the full code assembled by answering all questions
 function ValidateCodeInput(id){
-  var a = parseInt($(id).val());
-  if (c.code == a){
-    $(c.mID.e).removeClass("invisible");
-    $("#next-page-button").removeClass("invisible");
-  }
-}
-
-function ValidateCodeInput2(id){
   var a = parseInt($(id).val());
   if (c.code == a){
       Swal.fire({
@@ -155,6 +150,11 @@ function ValidateCodeInput2(id){
     }).then(function(){
       window.location.href = 'binary_tree_breckenridge.html';
     });
+  }
+  else {
+    var pop = $('#code-button').popover({content: "Try again!",});
+    pop.popover("show");
+    $('#code-form').trigger("reset");
   }
 }
 
@@ -192,20 +192,18 @@ function CheckRandomNum(){
     if(userNum < c.num){
       pop = $("#random-number").popover({content: userNum + " is lower than the random number",});
       pop.popover("show");
-      $("#form-random-num").trigger("reset");
     }
     else if (userNum > c.num){
       pop = $("#random-number").popover({content: userNum + " is higher than the random number",});
       pop.popover("show");
-      $("#form-random-num").trigger("reset");
     }
     else{
       correct = true;
       pop = $("#random-number").popover({content: "Congratulations, you got it", trigger: "hover", delay: {"hide": 0},});
       pop.popover("show");
-      $("#form-random-num").trigger("reset");
       $("#challenge-hint").text("Hint: The second digit of the code is " + c.code.toString()[1]);
       $("#challenge-hint").removeClass("invisible");
     }
   }
+  $("#form-random-num").trigger("reset");
 };
