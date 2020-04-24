@@ -1,10 +1,15 @@
+$("#binary-tree-resource-button").on("click",function(){
+  window.open("https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html","blank");
+});
+
+$("#challenge-button").on("click",function(){
+  window.location.href = "binary_tree_challenge.html";
+});
+
 $("#preorder-code-form").on("submit",function(e){
   e.preventDefault();
 });
 
-$("#postorder-code-form").on("submit",function(e){
-  e.preventDefault();
-});
 
 //convert code to preorder format
 function Preorder(code){
@@ -27,6 +32,7 @@ function PreorderHelper(a,b,c){
 //validates that user provided code correctly in preorder format
 function ValidatePreOrder(input){
   return input == c.preorder();
+
 }
 
 //creates a code of given size with no repeated numbers, shuffles, and returns them
@@ -67,18 +73,26 @@ const c = new ob();
 
 
 $("#preorder-code-button").on("click",function(){
+  $("#preorder-code-button").popover("dispose");
   const id = "#preorder-success-message";
   var pop;
   if (ValidatePreOrder($("#preorder-code-input").val())){
-    pop = $('#preorder-code-button').popover({content: "You got it, great work!!",});
-    pop.show('show');
+    //pop = $('#preorder-code-button').popover({content: "You got it, great work!!",});
+    //pop.popover('show');
+    Swal.fire({
+      title:'Awesome',
+      text: 'Let\'s head out to meet up with Lily at Amoeba Record Store in San Franciso!',
+      icon: 'success'
+    }).then(function(){
+      window.location.href = "https://google.com";
+    });
   }
   else{
     pop = $('#preorder-code-button').popover({content: "Try again!!",})
     pop.popover('show');
     $("#preorder-code-form").trigger("reset");
   }
-  //$(id).removeClass("invisible");
+  ValidatePreOrder($("#preorder-code-input").val());
 });
 
 function SuccessMessageCode(id, pos = 0){

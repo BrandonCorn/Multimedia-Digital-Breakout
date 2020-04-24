@@ -94,11 +94,11 @@
     <div class = "container">
       <div class = "row align-items-center">
         <div class = "col-lg-6">
-          <h3> <i>Use the resources link on the previous page.</i> </h3>
+          <h3> <i>Use this <a href = "https://www.tutorialspoint.com/data_structures_algorithms/dsa_queue.htm"target="blank">Resource</a>.</i> </h3>
           <form id = "question-1-form">
             <p> What is one way we can implement queues? </p>
             <div class = "form-group float-left">
-              <input id = "q-1-answer" class = "form-control" type = "text" placeholder = "Answer"><br>
+              <input id = "q-1-answer" class = "form-control" type = "text" placeholder = "Answer" autocomplete="off"><br>
             </div>
             <div class = "float-right" style = "margin-right: 60px;">
               <button type = "click" role = "button" id = "q-1-button" class = "btn btn-primary btn-md" data-toggle = "popover"
@@ -121,7 +121,7 @@
           <form id = "question-2-form">
             <p> What is the name of the method that allows you to view the front of a queue? </p>
             <div class = "form-group float-left">
-              <input id = "q-2-answer" class = "form-control" type = "text" placeholder = "Answer"><br>
+              <input id = "q-2-answer" class = "form-control" type = "text" placeholder = "Answer" autocomplete="off"><br>
             </div>
             <div class = "float-right" style = "margin-right: 60px;">
               <button type = "click" role = "button" id = "q-2-button" class = "btn btn-primary btn-md" data-toggle = "popover"
@@ -146,7 +146,7 @@
         <form id = "code-form">
           <h3> Enter the full code here to move on! </h3>
           <div class = "form-group">
-            <input id = "code-input" class = "form-control" type = "text" placeholder = "Code"><br>
+            <input id = "code-input" class = "form-control" type = "text" placeholder = "Code (ex. 123)" autocomplete="off"><br>
           </div>
           <div class = "button-div">
             <button type = "click" role = "button" id = "code-button" class = "btn btn-primary btn-md" data-toggle = "popover"
@@ -164,7 +164,7 @@
               <form id = "form-random-num">
                 <p> To get a hint, pick a number between 1-20. You have 3 attempts </p><br>
                 <div class = "float-left">
-                  <input id = "user-num-guess" class = "form-control" type = "text" placeholder = "Number">
+                  <input id = "user-num-guess" class = "form-control" type = "text" placeholder = "Number" autocomplete="off">
                 </div>
                 <div class = "float-right" style = "margin-right: 60px";>
                   <button type = "click" tabindex= "0" role = "button" id = "random-number" class = "btn btn-primary btn-md"
@@ -175,12 +175,8 @@
           </div>
           <div class="col-lg-6">
             <div class="p-5">
-              <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px;">
+              <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px; margin-bottom: 100px;">
                 <p id = "challenge-hint" class = "invisible"> Hint: </p>
-                <p id = "next-story-statement-2" class = "invisible"> You're getting the hang of it!
-                  Now let's make our way to Colorado to hit the slopes with Adeline! </p>
-                <button type = 'button' id = 'next-page-button'
-                  class = 'btn btn-primary btn-lg btn-block invisible' style = "margin-bottom: 50px;"> (Next Stop) Breckenridge Ski Resort</button>
               </div>
             </div>
           </div>
@@ -203,11 +199,17 @@
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> queue-challenge
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="js/pals_drive_thru.js"></script>
+
 </body>
 
 </html>

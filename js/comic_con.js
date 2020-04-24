@@ -14,11 +14,6 @@ $("#challenge-button").on('click',function(){
   window.location.href = "sock_challenge.html";
 });
 
-//button to open the drive thru story link
-$("#next-page-button").on("click",function(){
-  window.location.href = "queue_drive_thru.html";
-});
-
 //prevents answers to sock challenge from being submit and refreshing the page
 $("#form-random-num").on("submit",function(e){
   e.preventDefault();
@@ -73,12 +68,11 @@ else{
   if(userNum < c.num){
     pop = $("#random-number").popover({content: userNum + " is lower than the random number",});
     pop.popover("show");
-    $("#form-random-num").trigger("reset");
+
   }
   else if (userNum > c.num){
     pop = $("#random-number").popover({content: userNum + " is higher than the random number",});
     pop.popover("show");
-    $("#form-random-num").trigger("reset");
   }
   else{
     correct = true;
@@ -88,28 +82,34 @@ else{
     $("#challenge-hint").removeClass("invisible");
   }
 }
+$('#form-random-num').trigger('reset');
 };
 
 //validates the answer for correctness, makes visible link to next challenge upon positive validation
 $("#answer-button").on("click",function(){
   checkAnswer();
 });
+
+
 function checkAnswer(){
-  $("#answer-button").popover("dispose");
+  var pop;
   var pop;
   var regexAnswer = /teeth/
   var answerInput = $("#answer-input").val().toLowerCase();
   if (regexAnswer.test(answerInput)){
-    pop = $("#answer-button").popover({content: "That's correct, great job!",});
-    pop.popover("show");
     $("#challenge-hint").addClass("invisible");
-    $("#next-page-button").removeClass("invisible");
-    $("#next-story-statement-1").removeClass("invisible");
+    Swal.fire({
+      title: 'Great Job!',
+      text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
+      icon:'success',
+    }).then(function(result){
+      window.location.href="queue_drive_thru.html";
+    });
+
   }
   else{
     pop = $("#answer-button").popover({content: "That's incorrect, try again",});
     pop.popover("show");
   }
+  $('#form-answer').trigger('reset');
 }
-
-  //export{checkRandomNum};
