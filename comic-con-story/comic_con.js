@@ -103,7 +103,7 @@ function checkAnswer(){
       text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
       icon:'success',
     }).then(function(result){
-      window.location.href="queue_drive_thru.html";
+      window.location.href="../pals-story/queue_drive_thru.html";
     });
 
   }
