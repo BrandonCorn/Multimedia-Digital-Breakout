@@ -1,10 +1,15 @@
+$("#binary-tree-resource-button").on("click",function(){
+  window.open("https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html","blank");
+});
+
+$("#challenge-button").on("click",function(){
+  window.location.href = "binary_tree_challenge.html";
+});
+
 $("#preorder-code-form").on("submit",function(e){
   e.preventDefault();
 });
 
-$("#postorder-code-form").on("submit",function(e){
-  e.preventDefault();
-});
 
 //convert code to preorder format
 function Preorder(code){
@@ -26,7 +31,6 @@ function PreorderHelper(a,b,c){
 
 //validates that user provided code correctly in preorder format
 function ValidatePreOrder(input){
-  console.log(input + " " + c.preorder());
   return input == c.preorder();
 
 }
@@ -88,7 +92,6 @@ $("#preorder-code-button").on("click",function(){
     pop.popover('show');
     $("#preorder-code-form").trigger("reset");
   }
-  //$(id).removeClass("invisible");
   ValidatePreOrder($("#preorder-code-input").val());
 });
 
