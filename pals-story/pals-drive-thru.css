@@ -1,0 +1,39 @@
+.bg-overlay{
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../images/fast-food-restaurant.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.bg-faded .container {
+  position:relative;
+  z-index:2;
+}
+
+.cube {
+  width: 100px;
+  height: 100px;
+  float:left;
+}
+
+.cube1{
+    background-color: navy;
+}
+.cube2{
+  background-color: silver;
+}
+.cube3{
+  background-color: green;
+}
+.cube4{
+  background-color: black;
+}
+.cube5{
+  background-color: red;
+}
+
+.intro-text{
+  box-sizing: border-box;
+}

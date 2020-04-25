@@ -2,7 +2,7 @@
 
 //open queue challenge page on button click, belongs to story page
 $("#challenge-button").on("click",function(){
-  window.location.href="queue_challenge.html";
+  window.location.href="pals_challenge.html";
 });
 
 //open resource page for queues on button click, belongs to story page
@@ -47,9 +47,7 @@ const c = {
   mID: {
     a: "#sortable-success-message",
     b: "#q-1-success-message",
-    c: "#q-2-success-message",
-    d: "#code-success-message",
-    e: "#next-story-statement-2"
+    c: "#q-2-success-message"
   }
 };
 
@@ -148,7 +146,10 @@ function ValidateCodeInput(id){
         text:'You\'re getting the hang of it! Now let\'s make our way to Colorado to hit the slopes with Adeline!',
         icon:'success'
     }).then(function(){
-      window.location.href = 'binary_tree_breckenridge.html';
+      $(c.mID.a).addClass("invisible");
+      $(c.mID.b).addClass("invisible");
+      $(c.mID.c).addClass("invisible"); 
+      window.location.href = '../breckenridge-story/binary_tree_breckenridge.html';
     });
   }
   else {
