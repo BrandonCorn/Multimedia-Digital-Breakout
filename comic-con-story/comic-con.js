@@ -1,7 +1,7 @@
 
 //button to open link to comic-con linked list story
 $("#linked-list-comic-con").on('click',function(){
-  window.location.href = "comic-con-story/linked_list_comic_con.html";
+  window.location.href = "comic-con-story/linked-list-comic-con.html";
 });
 
 //button to open linked list resource in new tab
@@ -11,7 +11,7 @@ $("#linked-list-resource-button").on('click',function(){
 
 //button to open sock challenge link
 $("#challenge-button").on('click',function(){
-  window.location.href = "sock_challenge.html";
+  window.location.href = "linked-list-challenge.html";
 });
 
 //prevents answers to sock challenge from being submit and refreshing the page
@@ -26,7 +26,7 @@ $("#form-answer").on("submit",function(e){
 
 //constants
 const c = {
-  num : Math.floor((Math.random() * 20) + 1),
+  num : Math.floor((Math.random() * 19) + 1),
   count : 0,
   increment : function(){
     this.count++;
@@ -103,7 +103,7 @@ function checkAnswer(){
       text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
       icon:'success',
     }).then(function(result){
-      window.location.href="../pals-story/pals_queue.html";
+      window.location.href="../pals-story/queue-pals.html";
     });
 
   }

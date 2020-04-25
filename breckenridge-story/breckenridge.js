@@ -3,7 +3,7 @@ $("#binary-tree-resource-button").on("click",function(){
 });
 
 $("#challenge-button").on("click",function(){
-  window.location.href = "binary_tree_challenge.html";
+  window.location.href = "binary-tree-challenge.html";
 });
 
 $("#preorder-code-form").on("submit",function(e){

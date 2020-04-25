@@ -2,7 +2,7 @@
 
 //open queue challenge page on button click, belongs to story page
 $("#challenge-button").on("click",function(){
-  window.location.href="pals_challenge.html";
+  window.location.href="queue-challenge.html";
 });
 
 //open resource page for queues on button click, belongs to story page
@@ -33,7 +33,7 @@ $("#code-form").on("click",function(e){
 
 //constants
 const c = {
-  num : Math.floor((Math.random() * 20) + 1),
+  num : Math.floor((Math.random() * 19) + 1),
   count : 0,
   increment : function(){
     this.count++;
@@ -148,8 +148,8 @@ function ValidateCodeInput(id){
     }).then(function(){
       $(c.mID.a).addClass("invisible");
       $(c.mID.b).addClass("invisible");
-      $(c.mID.c).addClass("invisible"); 
-      window.location.href = '../breckenridge-story/binary_tree_breckenridge.html';
+      $(c.mID.c).addClass("invisible");
+      window.location.href = '../breckenridge-story/binary-tree-breckenridge.html';
     });
   }
   else {
