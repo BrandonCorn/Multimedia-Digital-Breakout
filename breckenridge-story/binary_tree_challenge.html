@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Breckenridge Challenge</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../one-page-wonder.min.css" rel="stylesheet">
+  <link href="word-search.css" rel="stylesheet">
+
+
+</head>
+
+<body class = "bg-overlay">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html">Data Structures</a>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href="linked_list_comic_con.html"> Comic-Con </a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href="queue_drive_thru.html"> Pal's </a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href ="binary_tree_breckenridge.html"> Breckenridge </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header class="banner">
+    <div class="image">
+    </div>
+  </header>
+
+  <section>
+    <div class = "row">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="puzzleWrap">
+          <h1 class = 'display-5'>Binary Tree Word Search</h1><br>
+          <p><i>Simply click and drag across the letters when you find a word. </i></p>
+          <h2 id = "word-search-complete" class = "invisible display-5" style = "color: green"> Well this is embarassing </h2>
+          <div id='puzzle'></div>
+          <div id='words'>
+
+          </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section>
+    <div class = "row">
+      <div class = "container">
+        <div class = "row align-items-center">
+            <h3 class = "float-left"> <i>Use this <a href = "https://www.tutorialspoint.com/data_structures_algorithms/tree_traversal.htm" target="blank">link</a> for guidance. </i> </h3>
+            <form id = "preorder-code-form">
+
+                <p> Once you have the code, let's assume the digits of the code are in level order format.
+                  Can you rearrange them to preorder? Try drawing the binary tree yourself to help. You'll need this code "in order" to continue!.
+                    <i> (Enter the code in preorder with no commas or spaces.)</i></p>
+              <div class = "form-group">
+                <input id = "preorder-code-input" class = "form-control"type = "text" placeholder = "Preorder (ex.234165)" autocomplete="off">
+              </div>
+
+              <div class = "button-div" >
+                <button type = "click" role = "button" id = "preorder-code-button" class = "btn btn-primary btn-md btn-block"
+                data-toggle="popover" data-trigger="focus"data-placement="bottom" data-container="body"> Submit </button><br>
+              </div>
+            </form>
+            <div class = "display-5">
+              <h2 id = "preorder-success-message" class = "invisible" style = "color: green"> Well this is embarassing! </h2>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="breckenridge.js"></script>
+  <script src="word-search.js"></script>
+
+</body>
+
+</html>
