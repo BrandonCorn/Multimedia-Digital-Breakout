@@ -1,14 +1,3 @@
-
-/**const A = function(){
-  if (Cookies.get("begin") != "true"){
-    Cookies.set("begin","true");
-    Cookies.set("reachstory1","false");
-    Cookies.set("reachstory2","false");
-    Cookies.set("reachstory3","false");
-    Cookies.set("reachstory4","false");
-  }
-}**/
-
 const purpose = function(){
   var internalCookies = Cookies;
   return {
@@ -58,16 +47,7 @@ const B = function(){
   return c;
 }
 
-/**
-function NavCheck(){
-  for(var i = 1; i < 5; i++){
-    if (Cookies.get("reachstory"+i) == "true"){
-      $("#nav-story-"+i).removeClass("disabled");
-    }
-  }
-} **/
-
-function NavCheck2(inst){
+function NavCheck(inst){
   for(var i = 1; i < 5; i++){
     if (inst.get("reachstory"+i) == "true"){
       $("#nav-story-"+i).removeClass("disabled");
@@ -82,8 +62,6 @@ $("#linked-list-comic-con").on('click',function(){
 
 
 window.addEventListener('load',function(){
-  //A();
-  //NavCheck();
   const chef = B();
-  NavCheck2(chef);
+  NavCheck(chef);
 });

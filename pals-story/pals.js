@@ -37,8 +37,6 @@ $("#code-form").on("click",function(e){
 
 //constants
 const C =function(){
-  //var chef = factory();
-  var chef = B();
   return {
   num : Math.floor((Math.random() * 19) + 1),
   count : 0,
@@ -71,7 +69,6 @@ $( function() {
 var sortableListValidation = function(event,ui){
   var c = C();
   var ogCarListElems = $("#sortable").children();
-  //alert(ogCarListElems);
   var currCarQueue = [];
   for (const element of ogCarListElems){
     currCarQueue.push(element.innerHTML);
@@ -85,9 +82,7 @@ var sortableListValidation = function(event,ui){
 function SuccessMessageCode(id,pos){
   const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
   const i = Math.floor((Math.random() * 4));
-  const chef = parseInt(factory().get("challenge2").split("")[pos]);
-  //$(id).text(success[i] + "The code is: " + c.code.toString()[pos]);
-  console.log(chef);
+  const chef = parseInt(B().get("challenge2").split("")[pos]);
   $(id).text(success[i] + "The code is: " + chef);
   $(id).removeClass("invisible");
 }
@@ -99,7 +94,6 @@ function ValidateQueue(o,elements){
   for (var i = 0; i < elements.length; i++){
     if (elements[i] != o.answers.answerCarQueue[i]){
       correct = false;
-      //var chef = factory().set("c2c",(Math.floor(Math.random() * 899) + 100));
       var chef = B().set("challenge2",(Math.floor(Math.random() * 899) + 100));
     }
   }
@@ -154,7 +148,6 @@ $("#code-button").on("click",function(){
 
 //validates the full code assembled by answering all questions
 function ValidateCodeInput(id){
-  //var chef = factory().get("c2c");
   var chef = B().get("challenge2");
   var a = $(id).val();
   if (chef == a){
