@@ -40,7 +40,6 @@ function PreorderHelper(a,b,c){
 
 //validates that user provided code correctly in preorder format
 function ValidatePreOrder(input){
-  //return input == o.preorder();
   var chef = Preorder(B().get('challenge3'));
   return input == chef;
 }
@@ -75,7 +74,6 @@ $("#preorder-code-button").on("click",function(){
   const id = "#preorder-success-message";
   const input = $("#preorder-code-input").val();
   var pop;
-  //if (ValidatePreOrder($("#preorder-code-input").val())){
   if(ValidatePreOrder(input)){
     Swal.fire({
       title:'Awesome',
@@ -105,7 +103,6 @@ function SuccessMessageCode(id, pos = 0){
   const i = Math.floor((Math.random() * 4));
   //added this line for cookie
   var chef = B().get("challenge3");
-  //$(id).text(success[i] + "The code is: " + c.code.toString());
   $(id).text(success[i] + "The code is: " + chef);
   $(id).removeClass("invisible");
 }
