@@ -38,11 +38,6 @@ $("#code-form").on("click",function(e){
 //constants
 const C =function(){
   return {
-  num : Math.floor((Math.random() * 19) + 1),
-  count : 0,
-  increment : function(){
-    this.count++;
-  },
   answers : {
     answerCarQueue : ["Black Car", "You", "Blue Car", "Red Truck", "Silver Car"],
     q1 : new RegExp("(linked(-| )\?lists\?)|(arrays\?)|(pointers\?)|(structures\?)","gi"),
@@ -165,53 +160,3 @@ function ValidateCodeInput(id){
     $('#code-form').trigger("reset");
   }
 }
-
-
-//button click calls checkRandom to validate user answer for hint
-$("#random-number").on('click',function(){
-  CheckRandomNum();
-});
-
-//checks input isdigit, is within range, and user has guesses left
-//Once validation is accepted, input is compared.
-function CheckRandomNum(){
-  $("#random-number").popover("dispose");
-  var pop;
-  var correct = false;
-  var regex = /[0-9 -()+]+$/;
-  var numInputForRegex = $("#user-num-guess").val();
-  //input validation
-  if (c.count >=3){
-    pop = $("#random-number").popover({content: "You have no more guesses left", trigger : "hover", delay : {"hide" : 0},});
-    pop.popover("show");
-    $("#random-number").prop("disabled",true);
-  }
-  else if (!(regex.test(numInputForRegex))){
-    pop = $("#random-number").popover({content: "Not a valid entry, enter a number",});
-    pop.popover("show");
-  }
-  else if (numInputForRegex > 20 || numInputForRegex < 0){
-    pop = $("#random-number").popover({content: "Not a valid entry, number must be between 1 and 20",});
-    pop.popover("show");
-  }
-  else{
-    c.increment();
-    var userNum = parseInt($("#user-num-guess").val());
-    if(userNum < c.num){
-      pop = $("#random-number").popover({content: userNum + " is lower than the random number",});
-      pop.popover("show");
-    }
-    else if (userNum > c.num){
-      pop = $("#random-number").popover({content: userNum + " is higher than the random number",});
-      pop.popover("show");
-    }
-    else{
-      correct = true;
-      pop = $("#random-number").popover({content: "Congratulations, you got it", trigger: "hover", delay: {"hide": 0},});
-      pop.popover("show");
-      $("#challenge-hint").text("Hint: The second digit of the code is " + c.code.toString()[1]);
-      $("#challenge-hint").removeClass("invisible");
-    }
-  }
-  $("#form-random-num").trigger("reset");
-};
