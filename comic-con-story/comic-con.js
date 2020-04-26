@@ -1,10 +1,9 @@
-//window.onload = function(){
 window.addEventListener('load',function(){
-  if(Cookies.get("reachstory1") == "false"){
-    Cookies.set("reachstory1","true");
+  const chef = B();
+  if(chef.get("reachstory1") == "false"){
+    chef.set("reachstory1","true");
   }
 });
-
 
 //button to open linked list resource in new tab
 $("#linked-list-resource-button").on('click',function(){

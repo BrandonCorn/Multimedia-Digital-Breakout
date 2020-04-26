@@ -1,10 +1,9 @@
-//window.onload = function(){
 window.addEventListener('load',function(){
-  if(Cookies.get("reachstory2") == "false"){
-    Cookies.set("reachstory2","true");
+  const chef = B();
+  if(chef.get("reachstory2") == "false"){
+    chef.set("reachstory2","true");
   }
-}); 
-
+});
 //open queue challenge page on button click, belongs to story page
 $("#challenge-button").on("click",function(){
   window.location.href="queue-challenge.html";
@@ -100,7 +99,7 @@ function ValidateQueue(elements){
 
 //validate question 1
 $("#q-1-button").on("click",function(){
-  var pop = $('#q-1-button').popover({content: "Try again", });
+  var pop = $('#q-1-button').popover({content: "Try again!", });
   if (ValidateQuestionOne()){
     pop.popover("dispose");
     SuccessMessageCode(c.mID.b,1);
