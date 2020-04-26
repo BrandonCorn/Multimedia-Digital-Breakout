@@ -20,11 +20,9 @@ $("#preorder-code-form").on("submit",function(e){
 
 //convert code to preorder format
 function Preorder(code){
-  //var arr = code.toString().split("");
   var arr = code.split("");
   var newArr = [];
   newArr = PreorderHelper(arr,0,newArr);
-  //return parseInt(newArr.join(""));
   return newArr.join("");
 }
 
