@@ -1,3 +1,9 @@
+window.addEventListener('load',function(){
+  if(Cookies.get("reachstory3") == "false"){
+    Cookies.set("reachstory3","true");
+  }
+}); 
+
 $("#binary-tree-resource-button").on("click",function(){
   window.open("https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html","blank");
 });

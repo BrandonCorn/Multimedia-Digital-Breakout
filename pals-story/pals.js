@@ -1,4 +1,9 @@
-//import {checkRandomNum} from 'comic_con.js';
+//window.onload = function(){
+window.addEventListener('load',function(){
+  if(Cookies.get("reachstory2") == "false"){
+    Cookies.set("reachstory2","true");
+  }
+}); 
 
 //open queue challenge page on button click, belongs to story page
 $("#challenge-button").on("click",function(){
