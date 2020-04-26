@@ -36,7 +36,9 @@ $("#code-form").on("click",function(e){
 
 
 //constants
-const c = {
+const C =function(){
+  var chef = factory();
+  return {
   num : Math.floor((Math.random() * 19) + 1),
   count : 0,
   increment : function(){
@@ -47,11 +49,11 @@ const c = {
     q1 : new RegExp("(linked(-| )\?lists\?)|(arrays\?)|(pointers\?)|(structures\?)","gi"),
     q2 : "peek"
   },
-  code : Math.floor((Math.random() * 899) + 100),
   mID: {
     a: "#sortable-success-message",
     b: "#q-1-success-message",
     c: "#q-2-success-message"
+  }
   }
 };
 
@@ -66,13 +68,14 @@ $( function() {
 
 //on stop event, check elements for correct order and provides code if successful
 var sortableListValidation = function(event,ui){
+  var c = C();
   var ogCarListElems = $("#sortable").children();
   //alert(ogCarListElems);
   var currCarQueue = [];
   for (const element of ogCarListElems){
     currCarQueue.push(element.innerHTML);
   }
-  if (ValidateQueue(currCarQueue)){
+  if (ValidateQueue(c,currCarQueue)){
     SuccessMessageCode(c.mID.a,0);
   }
 };
@@ -81,17 +84,21 @@ var sortableListValidation = function(event,ui){
 function SuccessMessageCode(id,pos){
   const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
   const i = Math.floor((Math.random() * 4));
-  $(id).text(success[i] + "The code is: " + c.code.toString()[pos]);
+  const chef = parseInt(factory().get("c2c").split("")[pos]);
+  //$(id).text(success[i] + "The code is: " + c.code.toString()[pos]);
+  console.log(chef);
+  $(id).text(success[i] + "The code is: " + chef);
   $(id).removeClass("invisible");
 }
 
 
 //returns true if all elments in the queue are in the correct order
-function ValidateQueue(elements){
+function ValidateQueue(o,elements){
   var correct = true;
   for (var i = 0; i < elements.length; i++){
-    if (elements[i] != c.answers.answerCarQueue[i]){
+    if (elements[i] != o.answers.answerCarQueue[i]){
       correct = false;
+      var chef = factory().set("c2c",(Math.floor(Math.random() * 899) + 100));
     }
   }
   return correct;
@@ -99,8 +106,9 @@ function ValidateQueue(elements){
 
 //validate question 1
 $("#q-1-button").on("click",function(){
+  var c = C();
   var pop = $('#q-1-button').popover({content: "Try again!", });
-  if (ValidateQuestionOne()){
+  if (ValidateQuestionOne(c)){
     pop.popover("dispose");
     SuccessMessageCode(c.mID.b,1);
   }
@@ -110,15 +118,16 @@ $("#q-1-button").on("click",function(){
     }
 });
 //validation uses regex
-function ValidateQuestionOne(){
+function ValidateQuestionOne(o){
   const check = $("#q-1-answer").val();
-  return c.answers.q1.test(check);
+  return o.answers.q1.test(check);
 }
 
 //provides output based on validation of question 2
 $("#q-2-button").on("click",function(){
+  var c = C();
   var pop = $('#q-2-button').popover({content: "Try again!",});
-  if (ValidateQuestionTwo()){
+  if (ValidateQuestionTwo(c)){
     pop.popover("dispose");
     SuccessMessageCode(c.mID.c,2);
   }
@@ -129,8 +138,8 @@ $("#q-2-button").on("click",function(){
 });
 
 //validates question 2
-function ValidateQuestionTwo(){
-  if (c.answers.q2 == $("#q-2-answer").val().toLowerCase()){
+function ValidateQuestionTwo(o){
+  if (o.answers.q2 == $("#q-2-answer").val().toLowerCase()){
     return true;
   }
   else {return false;}
@@ -143,16 +152,14 @@ $("#code-button").on("click",function(){
 
 //validates the full code assembled by answering all questions
 function ValidateCodeInput(id){
-  var a = parseInt($(id).val());
-  if (c.code == a){
+  var chef = factory().get("c1c");
+  var a = $(id).val();
+  if (chef == a){
       Swal.fire({
         title:'Great work!',
         text:'You\'re getting the hang of it! Now let\'s make our way to Colorado to hit the slopes with Adeline!',
         icon:'success'
     }).then(function(){
-      $(c.mID.a).addClass("invisible");
-      $(c.mID.b).addClass("invisible");
-      $(c.mID.c).addClass("invisible");
       window.location.href = '../breckenridge-story/binary-tree-breckenridge.html';
     });
   }
