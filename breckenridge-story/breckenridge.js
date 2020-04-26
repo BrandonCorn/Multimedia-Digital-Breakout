@@ -20,10 +20,12 @@ $("#preorder-code-form").on("submit",function(e){
 
 //convert code to preorder format
 function Preorder(code){
-  var arr = code.toString().split("");
+  //var arr = code.toString().split("");
+  var arr = code.split("");
   var newArr = [];
   newArr = PreorderHelper(arr,0,newArr);
-  return parseInt(newArr.join(""));
+  //return parseInt(newArr.join(""));
+  return newArr.join("");
 }
 
 //helper function for recursively setting code to preorder
@@ -38,8 +40,9 @@ function PreorderHelper(a,b,c){
 
 //validates that user provided code correctly in preorder format
 function ValidatePreOrder(input){
-  return input == c.preorder();
-
+  //return input == o.preorder();
+  var chef = Preorder(B().get('challenge3'));
+  return input == chef;
 }
 
 //creates a code of given size with no repeated numbers, shuffles, and returns them
@@ -49,7 +52,8 @@ function Code(size){
     arr.push(i);
   }
   Shuffle(arr);
-  return parseInt(arr.join(""));
+  //return parseInt(arr.join(""));
+  return arr.join("");
 }
 
 //shuffles elements of an array without repeating them
@@ -65,27 +69,14 @@ function Shuffle(arr){
 }
 
 
-//constants
-const ob = function(){
-  return {
-    code: Code(6),
-    preorder: function(){
-      return Preorder(this.code);
-    }
-  }
-};
-
-//instance of constants
-const c = new ob();
-
 
 $("#preorder-code-button").on("click",function(){
   $("#preorder-code-button").popover("dispose");
   const id = "#preorder-success-message";
+  const input = $("#preorder-code-input").val();
   var pop;
-  if (ValidatePreOrder($("#preorder-code-input").val())){
-    //pop = $('#preorder-code-button').popover({content: "You got it, great work!!",});
-    //pop.popover('show');
+  //if (ValidatePreOrder($("#preorder-code-input").val())){
+  if(ValidatePreOrder(input)){
     Swal.fire({
       title:'Awesome',
       text: 'Let\'s head out to meet up with Lily at Amoeba Record Store in San Franciso!',
@@ -102,9 +93,19 @@ $("#preorder-code-button").on("click",function(){
   ValidatePreOrder($("#preorder-code-input").val());
 });
 
+function Set(){
+  B().set("challenge3",Code(6));
+}
+
+function Success(){
+  Set();
+}
 function SuccessMessageCode(id, pos = 0){
   const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
   const i = Math.floor((Math.random() * 4));
-  $(id).text(success[i] + "The code is: " + c.code.toString());
+  //added this line for cookie
+  var chef = B().get("challenge3");
+  //$(id).text(success[i] + "The code is: " + c.code.toString());
+  $(id).text(success[i] + "The code is: " + chef);
   $(id).removeClass("invisible");
 }
