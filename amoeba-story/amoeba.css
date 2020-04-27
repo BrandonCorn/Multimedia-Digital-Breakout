@@ -1,0 +1,89 @@
+.bg-overlay{
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('images/record-store.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.bg-faded .container {
+  position:relative;
+  z-index:2;
+}
+
+.cube {
+  width: 80px;
+  height: 80px;
+  margin: 1px;
+  float:left;
+}
+.cube-box{
+  width:90px;
+  height:90px;
+  margin:10px;
+  border-style: solid;
+  border-width:thick;
+}
+
+.cube-box-2{
+  width: 160px;
+  height: 90px;
+  margin:10px;
+
+  border-style: solid;
+  border-width:thick;
+}
+
+.cube-box-3{
+  width: 240px;
+  height: 90px;
+  margin: 10px;
+  border-style: solid;
+  border-width:thick;
+}
+
+.cube-box-6{
+  width: 500px;
+  height: 90px;
+  margin: 10px;
+  border-style: solid;
+  border-width:thick;
+}
+
+.cube-box, .cube-box-2,.cube-box-3,.cube-box-6{
+  border-color: silver;
+}
+
+#sorting-div{
+  height:1000px;
+
+}
+.cube1{
+  background-color: blue;
+}
+.cube2{
+  background-color: green;
+}
+.cube3{
+  background-color: silver;
+}
+.cube4{
+  background-color: brown;
+}
+.cube5{
+  background-color: red;
+}
+
+.cube6{
+  background-color: purple;
+}
+
+.code-div, .banner{
+  margin-bottom: 60px;
+}
+
+.question{
+  padding-left: 40px;
+  height: 700px;
+}
