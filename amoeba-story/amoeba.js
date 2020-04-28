@@ -3,10 +3,9 @@ function Code(size){
   var arr = [];
   for (var i = 1; i <= size; i++){
     arr.push(i);
-    //arr.push(Math.floor(Math.random() * 49) + 1);
   }
   Shuffle(arr);
-  //return parseInt(arr.join(""));
+
   return arr.join("");
 }
 
@@ -40,7 +39,7 @@ function RoundOnePositions(){
   else{
     cook += "546";
   }
-  //chef.set("sort-round-1-position",cook);
+
   return cook;
 }
 
@@ -61,7 +60,7 @@ function SortRoundOne(){
   else{
     nV += val[4] + val[3] + val[5];
   }
-  //chef.set("round-1-code",nV);
+
   return nV;
 }
 
@@ -92,20 +91,19 @@ function SortRoundTwo(x,y,z){
     }
   }
 
-  //while (l.length != 0){
   while(a < l.length){
     sortArr.push(l[a]);
     posArr.push(lPos[a]);
       a++;
   }
-  //while (r.length != 0){
+
   while(b < r.length){
     sortArr.push(r[b]);
     posArr.push(rPos[b]);
     b++;
   }
   var final = [sortArr.join(""), posArr.join("")];
-  //return sortArr.join("");
+
   return final;
 }
 
@@ -147,8 +145,7 @@ function FinalRound(){
     posArr.push(rPos[b]);
     b++;
   }
-  //var final = [sortArr.join(""), posArr.join("")];
-  //return sortArr.join("");
+
   return posArr.join("");
 }
 
@@ -175,19 +172,6 @@ function SetNums(){
   $("#val-6").text(val[5]);
 }
 
-function Code2(size){
-  var arr = [];
-  for (var i = 1; i <= size; i++){
-    arr.push((Math.floor(Math.random() * 49) +1)+",");
-  }
-  Shuffle(arr);
-  //return parseInt(arr.join(""));
-  var check = arr.join("");
-  check = check.substring(0,check.length-1); 
-  console.log(check);
-  console.log(check.split(","));
-  return arr.join("");
-}
 
 window.addEventListener('load',function(){
   const chef = B();
@@ -196,7 +180,6 @@ window.addEventListener('load',function(){
   }
   SetTemp();
   SetNums();
-  Code2(6);
 });
 
 
