@@ -70,8 +70,8 @@
       <div class = "row align-items-center">
         <div class = "col-lg-5 order-lg-1 question">
           <div class="p-5">
-            <h2 class="display-5">You’ve taken more than you can handle, your first two are free,
-              and when a thief kisses you, count. What am I?</h2>
+            <h2 class="display-5">To the left is a step by step layout of the merge sort algorithm. Drag each cube to
+              the correct cell based on the number in the cube.</h2>
             <p><i>Your answer should contain what's on the socks (ex. "Superman Socks" or "Piano Socks")</i></p>
           </div>
         </div>
@@ -83,42 +83,42 @@
               <div class = " border cube">
                 <div class="card cube cube1 border" id = "cube-1">
                   <div class="card-body">
-                    <p class="card-text text-center">cube</p>
+                    <p id = "val-1" class="card-text text-center">cube</p>
                   </div>
                 </div>
               </div>
               <div class = "border cube">
                 <div class="card cube cube2" id = "cube-2">
                   <div class="card-body">
-                    <p class="card-text text-center">cube</p>
+                    <p id = "val-2" class="card-text text-center">cube</p>
                   </div>
                 </div>
               </div>
               <div class = "border cube">
                 <div class="card cube cube3" id = "cube-3">
                   <div class="card-body">
-                    <p class="card-text text-center">cube</p>
+                    <p id = "val-3" class="card-text text-center">cube</p>
                   </div>
                 </div>
               </div>
               <div class = "border cube">
                 <div  class="card cube cube4" id = "cube-4">
                   <div class="card-body">
-                    <p class="card-text text-center">cube</p>
+                    <p id = "val-4" class="card-text text-center">cube</p>
                   </div>
                 </div>
               </div>
               <div class = "border cube">
                 <div class="card cube cube5" id = "cube-5">
                   <div class="card-body">
-                    <p class="card-text text-center">cube</p>
+                    <p id = "val-5" class="card-text text-center">cube</p>
                   </div>
                 </div>
               </div>
               <div class = "border cube">
                 <div class="card cube cube6" id = "cube-6">
                   <div class="card-body">
-                    <p class="card-text text-center">cube</p>
+                    <p id = "val-6" class="card-text text-center">cube</p>
                   </div>
                 </div>
               </div>
@@ -182,44 +182,44 @@
             <!-- sort round 2 -->
             <div class = "row d-flex justify-content-center">
               <div class = "cube-box-2 cube d-flex justify-content-center">
-                <div  class = "droppable-1 cube border"> </div>
-                <div  class = "droppable-2 cube border"> </div>
+                <div  id = "sort-round-one-1" class = "cube border"> </div>
+                <div  id = "sort-round-one-2" class = "cube border"> </div>
               </div>
               <div class = "cube-box d-flex justify-content-center">
-                <div  class = "droppable-3 cube"> </div>
+                <div id = "sort-round-one-3" class = "cube"> </div>
               </div>
               <div class = "cube-box-2 cube d-flex justify-content-center">
-                <div  class = "droppable-4 cube border"> </div>
-                <div  class = "droppable-5 cube border"> </div>
+                <div id = "sort-round-one-4" class = "cube border"> </div>
+                <div id = "sort-round-one-5" class = "cube border"> </div>
               </div>
               <div class = "cube-box d-flex justify-content-center">
-                <div  class = "droppable-6 cube border"> </div>
+                <div id = "sort-round-one-6" class = "cube border"> </div>
               </div>
             </div>
 
             <!-- sort round 3 -->
             <div class = "row d-flex justify-content-center">
               <div class = "cube-box-3 cube d-flex justify-content-center">
-                <div  class = "droppable-1 cube border"> </div>
-                <div  class = "droppable-2 cube border"> </div>
-                <div  class = "droppable-3 cube border"> </div>
+                <div id = "sort-round-two-1" class = "cube border"> </div>
+                <div id = "sort-round-two-2" class = "cube border"> </div>
+                <div id = "sort-round-two-3" class = "cube border"> </div>
               </div>
               <div class = "cube-box-3 cube d-flex justify-content-center">
-                <div  class = "droppable-4 cube border"> </div>
-                <div  class = "droppable-5 cube border"> </div>
-                <div  class = "droppable-6 cube border"> </div>
+                <div id = "sort-round-two-4" class = "cube border"> </div>
+                <div id = "sort-round-two-5" class = "cube border"> </div>
+                <div id = "sort-round-two-6" class = "cube border"> </div>
               </div>
             </div>
 
             <!-- sorted nums -->
             <div class = "row d-flex justify-content-center">
               <div class = "cube-box-6 d-flex justify-content-center">
-                <div class = "droppable-1 cube border"> </div>
-                <div class = "droppable-2 cube border"> </div>
-                <div class = "droppable-3 cube border"> </div>
-                <div class = "droppable-4 cube border"> </div>
-                <div class = "droppable-5 cube border"> </div>
-                <div class = "droppable-6 cube border"> </div>
+                <div id = "final-round-1" class = "cube border"> </div>
+                <div id = "final-round-2" class = "cube border"> </div>
+                <div id = "final-round-3" class = "cube border"> </div>
+                <div id = "final-round-4" class = "cube border"> </div>
+                <div id = "final-round-5" class = "cube border"> </div>
+                <div id = "final-round-6" class = "cube border"> </div>
               </div>
             </div>
           </div>
@@ -231,7 +231,7 @@
         <div class = "container">
           <form id = "form-answer">
             <div class = "form-group">
-              <h2 class = "display-5"> Enter the code here </h2> 
+              <h2 class = "display-5"> Enter the code here </h2>
               <input id = "answer-input" class = "form-control" type = "text" placeholder = "Answer" autocomplete="off"><br>
             </div>
             <div class = "button-div">
@@ -256,9 +256,9 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
   <script src="amoeba.js"></script>
-
-
+  <script src="../index.js"></script>
 </body>
 
 </html>
