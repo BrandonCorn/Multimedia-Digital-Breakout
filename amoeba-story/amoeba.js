@@ -1,8 +1,12 @@
 //creates a code of given size with no repeated numbers, shuffles, and returns them
-function Code(size){
+function Code(size,num){
   var arr = [];
   for (var i = 1; i <= size; i++){
-    arr.push(i);
+    //arr.push(i);
+    if (i > 3){
+      arr.push(i+2);
+    }
+    else{ arr.push(i); }
   }
   Shuffle(arr);
 
