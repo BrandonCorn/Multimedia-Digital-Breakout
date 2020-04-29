@@ -1,7 +1,8 @@
-
-//button to open link to comic-con linked list story
-$("#linked-list-comic-con").on('click',function(){
-  window.location.href = "comic-con-story/linked-list-comic-con.html";
+window.addEventListener('load',function(){
+  const chef = B();
+  if(chef.get("reachstory1") == "false"){
+    chef.set("reachstory1","true");
+  }
 });
 
 //button to open linked list resource in new tab
@@ -97,7 +98,7 @@ function checkAnswer(){
   var regexAnswer = /teeth/
   var answerInput = $("#answer-input").val().toLowerCase();
   if (regexAnswer.test(answerInput)){
-    $("#challenge-hint").addClass("invisible");
+    Cookies.set("useranswerchallenge1", answerInput);
     Swal.fire({
       title: 'Great Job!',
       text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
@@ -111,5 +112,5 @@ function checkAnswer(){
     pop = $("#answer-button").popover({content: "That's incorrect, try again",});
     pop.popover("show");
   }
-  $('#form-answer').trigger('reset');
+
 }

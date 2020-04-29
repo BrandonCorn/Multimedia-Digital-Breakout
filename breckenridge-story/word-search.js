@@ -706,6 +706,7 @@
 
         if (wordList.length === 0) {
           $('.puzzleSquare').addClass('complete');
+          Success();
           SuccessMessageCode("#word-search-complete");
         }
       }

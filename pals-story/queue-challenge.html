@@ -41,10 +41,13 @@
             <a class="nav-link" href="../index.html">Home</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href="../comic-con-story/linked-list-comic-con.html"> Comic-Con </a>
+            <a id = "nav-story-1" class = "nav-link" href="../comic-con-story/linked-list-comic-con.html"> Comic-Con </a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href="queue-pals.html"> Pal's </a>
+            <a id = "nav-story-2" class = "nav-link" href="queue-pals.html"> Pal's </a>
+          </li>
+          <li class = "nav-item">
+            <a id = "nav-story-3" class = "nav-link disabled" href ="../breckenridge-story/binary-tree-breckenridge.html"> Breckenridge </a>
           </li>
         </ul>
       </div>
@@ -156,34 +159,7 @@
       </div>
     </div>
 
-    <div class = "row">
-      <div class = "container">
-        <div class="row align-items-center">
-          <div class="col-lg-6" style = "margin-top: 15px; margin-bottom: 25px;">
-        <!--    <div class=""> -->
-              <form id = "form-random-num">
-                <p> To get a hint, pick a number between 1-20. You have 3 attempts </p><br>
-                <div class = "float-left">
-                  <input id = "user-num-guess" class = "form-control" type = "text" placeholder = "Number" autocomplete="off">
-                </div>
-                <div class = "float-right" style = "margin-right: 60px";>
-                  <button type = "click" tabindex= "0" role = "button" id = "random-number" class = "btn btn-primary btn-md"
-                  data-toggle = "popover" data-trigger = "focus" data-placement = "right" data-container = "body"> Guess Number </button>
-                </div>
-              </form>
-          <!--  </div> -->
-          </div>
-          <div class="col-lg-6">
-            <div class="p-5">
-              <div id = "next-page-div-button"class = "float-right" style = "margin-right: 20px; margin-bottom: 100px;">
-                <p id = "challenge-hint" class = "invisible"> Hint: </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <section>
     <div class="container">
@@ -192,7 +168,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-5 bg-black">
+  <footer class="py-5 bg-black" style = "margin-top:60px;">
     <div class="container">
       <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
     </div>
@@ -205,7 +181,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
   <script src="pals.js"></script>
+  <script src="../index.js"></script>
 
 </body>
 
