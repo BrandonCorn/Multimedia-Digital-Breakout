@@ -24,6 +24,11 @@ $("#question-2-form").on("click",function(e){
   e.preventDefault();
 });
 
+//prevent form submission of question 2 answer
+$("#question-3-form").on("click",function(e){
+  e.preventDefault();
+});
+
 //prevent form submission guessing number for hint
 $("#form-random-num").on("click",function(e){
   e.preventDefault();
@@ -38,18 +43,22 @@ $("#code-form").on("click",function(e){
 //constants
 const C =function(){
   return {
-  answers : {
-    answerCarQueue : ["Black Car", "You", "Blue Car", "Red Truck", "Silver Car"],
-    q1 : new RegExp("(linked(-| )\?lists\?)|(arrays\?)|(pointers\?)|(structures\?)","gi"),
-    q2 : "peek"
-  },
-  mID: {
-    a: "#sortable-success-message",
-    b: "#q-1-success-message",
-    c: "#q-2-success-message"
-  }
+    mID: {
+      a: "#sortable-success-message",
+      b: "#q-1-success-message",
+      c: "#q-2-success-message"
+    }
   }
 };
+
+//initializes questions answers to false
+function SetSuccessValues(){
+  const chef = B();
+  chef.set("challenge-2-queue-complete","false");
+  chef.set("challenge-2-question-1","false");
+  chef.set("challenge-2-question-2","false");
+  chef.set("challenge-2-question-3","false");
+}
 
 //make list sortable
 $( function() {
@@ -68,7 +77,7 @@ var sortableListValidation = function(event,ui){
   for (const element of ogCarListElems){
     currCarQueue.push(element.innerHTML);
   }
-  if (ValidateQueue(c,currCarQueue)){
+  if (ValidateQueue(currCarQueue)){
     SuccessMessageCode(c.mID.a,0);
   }
 };
@@ -78,16 +87,18 @@ function SuccessMessageCode(id,pos){
   const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
   const i = Math.floor((Math.random() * 4));
   const chef = parseInt(B().get("challenge2").split("")[pos]);
-  $(id).text(success[i] + "The code is: " + chef);
+  $(id).text(success[i]); //+ "The code is: " + chef);
   $(id).removeClass("invisible");
 }
 
 
 //returns true if all elments in the queue are in the correct order
-function ValidateQueue(o,elements){
+function ValidateQueue(elements){
+  var answer = ["Black Car", "You", "Blue Car", "Red Truck", "Silver Car"];
   var correct = true;
   for (var i = 0; i < elements.length; i++){
-    if (elements[i] != o.answers.answerCarQueue[i]){
+    //if (elements[i] != o.answers.answerCarQueue[i]){
+    if (elements[i] != answer[i]){
       correct = false;
       var chef = B().set("challenge2",(Math.floor(Math.random() * 899) + 100));
     }
@@ -95,32 +106,51 @@ function ValidateQueue(o,elements){
   return correct;
 }
 
-//validate question 1
+//validation uses regex
+function ValidateQuestionOne(input){
+  const chef = B();
+  const regEx = new RegExp("(linked(-| )\?lists\?)|(arrays\?)|(pointers\?)|(structures\?)","gi")
+  //const answer = $("#q-1-answer").val();
+  if (regEx.test(input)){
+    chef.set("challenge-2-question-1","true");
+  }
+  return regEx.test(input);
+}
+
+//button calls for validation of question 1
 $("#q-1-button").on("click",function(){
-  var c = C();
   var pop = $('#q-1-button').popover({content: "Try again!", });
-  if (ValidateQuestionOne(c)){
+  var answer = $("#q-1-answer").val();
+  if (ValidateQuestionOne(answer)){
     pop.popover("dispose");
-    SuccessMessageCode(c.mID.b,1);
+    pop.popover({content: "Awesome!",});
+    pop.popover("show");
   }
   else {
     pop.popover('show');
     $('#question-1-form').trigger('reset');
     }
 });
-//validation uses regex
-function ValidateQuestionOne(o){
-  const check = $("#q-1-answer").val();
-  return o.answers.q1.test(check);
+
+//validates question 2
+function ValidateQuestionTwo(input){
+  const chef = B();
+  const regEx = new RegExp("(peek)","gi")
+  //var answer = $("#q-2-answer").val();
+  if (regEx.test(input)){
+    chef.set("challenge-2-question-2","true");
+  }
+  return regEx.test(input);
 }
 
-//provides output based on validation of question 2
+//button calls for validaton of question 2
 $("#q-2-button").on("click",function(){
-  var c = C();
   var pop = $('#q-2-button').popover({content: "Try again!",});
-  if (ValidateQuestionTwo(c)){
+  var answer = $("#q-1-answer").val();
+  if (ValidateQuestionTwo()){
     pop.popover("dispose");
-    SuccessMessageCode(c.mID.c,2);
+    pop.popover({content: "You got it!",});
+    pop.popover("show");
   }
   else{
     pop.popover("show");
@@ -128,14 +158,35 @@ $("#q-2-button").on("click",function(){
   }
 });
 
-//validates question 2
-function ValidateQuestionTwo(o){
-  if (o.answers.q2 == $("#q-2-answer").val().toLowerCase()){
-    return true;
+//validates question 3
+function ValidateQuestionThree(){
+  const chef = B();
+  const regEx = new RegExp("(?=.*single)(?=.*lane)(?=.*road)|(?=.*one)(?=.*way)(?=.*road)","gi")
+  const answer = $("#q-3-answer").val();
+  if (regEx.test(answer)){
+    chef.set("challenge-2-question-3","true");
   }
-  else {return false;}
+  return regEx.test(answer);
 }
 
+//button calls for validaton of question 3
+$("#q-3-button").on("click",function(){
+  var c = C();
+  var pop = $('#q-3-button').popover({content: "Try again!",});
+  if (ValidateQuestionThree()){
+    pop.popover("dispose");
+    //SuccessMessageCode(c.mID.c,2);
+    pop.popover({content: "You got it!",});
+    pop.popover("show");
+  }
+  else{
+    pop.popover("show");
+    $('#question-3-form').trigger('reset');
+  }
+});
+
+
+/**
 //calls function to validate code input
 $("#code-button").on("click",function(){
   ValidateCodeInput("#code-input");
@@ -159,4 +210,4 @@ function ValidateCodeInput(id){
     pop.popover("show");
     $('#code-form').trigger("reset");
   }
-}
+} **/
