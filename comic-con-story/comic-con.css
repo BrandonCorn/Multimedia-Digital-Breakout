@@ -11,3 +11,15 @@
   position:relative;
   z-index:2;
 }
+
+#question-section{
+  margin-top: 60px;
+}
+
+#resource-header{
+  margin-bottom:30px;
+}
+
+#question-1-header, #question-2-header{
+  margin-bottom: 25px; 
+}

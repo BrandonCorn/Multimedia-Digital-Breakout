@@ -3,6 +3,7 @@ window.addEventListener('load',function(){
   if(chef.get("reachstory1") == "false"){
     chef.set("reachstory1","true");
   }
+  SetSuccessValues();
 });
 
 //button to open linked list resource in new tab
@@ -25,7 +26,143 @@ $("#form-answer").on("submit",function(e){
   e.preventDefault();
 });
 
-//constants
+//prevent form submission of question 1 answer
+$("#question-1-form").on("click",function(e){
+  e.preventDefault();
+});
+
+//prevent form submission of question 2 answer
+$("#question-2-form").on("click",function(e){
+  e.preventDefault();
+});
+
+function SetSuccessValues(){
+  const chef = B();
+  chef.set("challenge-1-riddle-answer","false");
+  chef.set("challenge-1-question-1","false");
+  chef.set("challenge-1-question-2","false");
+}
+
+
+//check if all questions correctness
+function CheckAllQuestions(){
+  const chef = B();
+  const a = chef.get("challenge-1-riddle-answer");
+  const b = chef.get("challenge-1-question-1");
+  const c = chef.get("challenge-1-question-2");
+  if (a == "true" && b == "true" && c == "true"){
+    Swal.fire({
+      title: 'Great Job!',
+      text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
+      icon:'success',
+    }).then(function(result){
+      window.location.href="../pals-story/queue-pals.html";
+    });
+  }
+}
+
+//validates the answer for correctness, makes visible link to next challenge upon positive validation
+$("#answer-button").on("click",function(){
+  //CheckAnswer();
+  var pop = $('#answer-button').popover({content: "Try again!", });
+  var answer = $("#answer-input").val()
+  if (CheckAnswer(answer)){
+    pop.popover("dispose");
+    pop.popover({content: "Great work!",})
+    pop.popover('show');
+    CheckAllQuestions();
+  }
+  else{
+    pop.popover("show");
+    $('#form-answer').trigger('reset');
+  }
+});
+
+
+function CheckAnswer(input){
+  var pop;
+  const chef = B();
+  var regexAnswer = /teeth/
+  //var answerInput = $("#answer-input").val().toLowerCase();
+  if (regexAnswer.test(input)){
+    chef.set("challenge-1-riddle-answer","true");
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+//validates question 1 answer
+function ValidateQuestionOne(input){
+  const chef = B();
+  const regexAnswer1 = new RegExp("(dynamic)","gi");
+  const regexAnswer2 = new RegExp("(insertion)|(deletion)","gi");
+  if (regexAnswer1.test(input) || regexAnswer2.test(input)){
+    chef.set("challenge-1-question-1","true");
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+//button calls for question 1 validation
+$("#q-1-button").on("click",function(){
+  //var c = C();
+  const answer = $("#q-1-answer").val();
+  var pop = $('#q-1-button').popover({content: "Try again!", });
+  if (ValidateQuestionOne(answer)){
+    pop.popover("dispose");
+    pop.popover({content: "Great work!",})
+    pop.popover('show');
+    CheckAllQuestions();
+  }
+  else {
+    pop.popover('show');
+    $('#question-1-form').trigger('reset');
+    }
+});
+
+//validates question 2
+function ValidateQuestionTwo(input){
+  const chef = B();
+  const regexAnswer1 = new RegExp("(?=.*extra)(?=.*memory)","gi");
+  const regexAnswer2 = new RegExp("(?=.*no)(?=.*random)(?=.*access)|(?=.*random)(?=.*access)(?=.*not)","gi")
+  const regexAnswer3 = new RegExp("(?=.*not)(?=.*cache)(?=.*friendly)","gi")
+  if (regexAnswer1.test(input) || regexAnswer2.test(input) || regexAnswer3.test(input)){
+    chef.set("challenge-1-question-2","true");
+    return true;
+  }
+  else {
+    return false;
+  }
+
+}
+//button calls for question 2 validation
+$("#q-2-button").on("click",function(){
+  //var c = C();
+  const answer = $("#q-2-answer").val();
+  var pop = $('#q-2-button').popover({content: "Try again!", });
+  if (ValidateQuestionTwo(answer)){
+    pop.popover("dispose");
+    pop.popover({content: "Great work!",})
+    pop.popover('show');
+    CheckAllQuestions();
+  }
+  else {
+    pop.popover('show');
+    $('#question-2-form').trigger('reset');
+  }
+});
+
+//NOT USING THIS RANDOM NUMBER GUESS FOR HINT -------------------------------
+
+//upon clicking this button you submit your answer to be analyzed
+//It will be check to make sure it is a digit and is within the range of guesses
+//Once validation is accepted, input is compared.
+
+/**constants
 const c = {
   num : Math.floor((Math.random() * 19) + 1),
   count : 0,
@@ -34,12 +171,11 @@ const c = {
   }
 };
 
-//upon clicking this button you submit your answer to be analyzed
-//It will be check to make sure it is a digit and is within the range of guesses
-//Once validation is accepted, input is compared.
+
 $("#random-number").on('click',function(){
   checkRandomNum();
 });
+
 
 function checkRandomNum(){
 $("#random-number").popover("dispose");
@@ -83,34 +219,8 @@ else{
     $("#challenge-hint").removeClass("invisible");
   }
 }
+
+
 $('#form-random-num').trigger('reset');
 };
-
-//validates the answer for correctness, makes visible link to next challenge upon positive validation
-$("#answer-button").on("click",function(){
-  checkAnswer();
-});
-
-
-function checkAnswer(){
-  var pop;
-  var pop;
-  var regexAnswer = /teeth/
-  var answerInput = $("#answer-input").val().toLowerCase();
-  if (regexAnswer.test(answerInput)){
-    Cookies.set("useranswerchallenge1", answerInput);
-    Swal.fire({
-      title: 'Great Job!',
-      text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
-      icon:'success',
-    }).then(function(result){
-      window.location.href="../pals-story/queue-pals.html";
-    });
-
-  }
-  else{
-    pop = $("#answer-button").popover({content: "That's incorrect, try again",});
-    pop.popover("show");
-  }
-
-}
+**/
