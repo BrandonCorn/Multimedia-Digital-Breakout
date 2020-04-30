@@ -78,7 +78,7 @@ $("#preorder-code-button").on("click",function(){
       text: 'Let\'s head out to meet up with Lily at Amoeba Record Store in San Franciso!',
       icon: 'success'
     }).then(function(){
-      window.location.href = "../amoeba-story/merge-sort-amoeba-records";
+      window.location.href = "../amoeba-story/merge-sort-amoeba-records.html";
     });
   }
   else{
@@ -101,7 +101,7 @@ function SuccessMessageCode(id, pos = 0){
   const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
   const i = Math.floor((Math.random() * 4));
   //added this line for cookie
-  var chef = B().get("challenge3");
+  var chef = B().get("challenge-3-code");
   $(id).text(success[i] + "The code is: " + chef);
   $(id).removeClass("invisible");
 }
