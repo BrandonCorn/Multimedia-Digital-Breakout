@@ -38,7 +38,7 @@ function PreorderHelper(a,b,c){
 
 //validates that user provided code correctly in preorder format
 function ValidatePreOrder(input){
-  const chef = Preorder(B().get('challenge3'));
+  const chef = Preorder(B().get('challenge-3-code'));
   return input == chef;
 }
 
@@ -78,7 +78,7 @@ $("#preorder-code-button").on("click",function(){
       text: 'Let\'s head out to meet up with Lily at Amoeba Record Store in San Franciso!',
       icon: 'success'
     }).then(function(){
-      window.location.href = "https://google.com";
+      window.location.href = "../amoeba-story/merge-sort-amoeba-records";
     });
   }
   else{
@@ -90,7 +90,8 @@ $("#preorder-code-button").on("click",function(){
 });
 
 function Set(){
-  B().set("challenge3",Code(6));
+  const chef = B();
+  chef.set("challenge-3-code",Code(6));
 }
 
 function Success(){
