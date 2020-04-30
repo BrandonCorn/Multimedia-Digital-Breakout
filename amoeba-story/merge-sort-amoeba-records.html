@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Comic Con Linked Lists</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../one-page-wonder.min.css" rel="stylesheet">
+  <link href = "amoeba.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <a class="navbar-brand" href="index.html"> Data Structures </a>
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class = "nav-item">
+            <a id = "nav-story-1" class = "nav-link disabled" href="linked-list-comic-con.html"> Comic-Con </a>
+          </li>
+          <li class = "nav-item">
+            <a id = "nav-story-2" class = "nav-link disabled" href= "../pals-story/queue-pals.html"> Pal's </a>
+          </li>
+          <li class = "nav-item">
+            <a id = "nav-story-3" class = "nav-link disabled" href ="../breckenridge-story/binary-tree-breckenridge.html"> Breckenridge </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="banner" style="margin-bottom: 60px;">
+    <div class="image">
+      <img class = "img-fluid" src = "images/record-store.jpg" alt = "Records on the wall">
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-4">
+            <img class="img-fluid rounded-circle" src="images/alphabetized-records.jpg" alt="Alphabetized records">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">The gang has finally reached San Francisco...</h2>
+              <p>and it’s time to meet up with Lily. Lily works at the Amoeba Record Store and is planning to join the crew on their adventure as soon as she finishes her last shift. She’s
+                almost out the door and her boss has tasked her with setting up a for sale section with close to 50 records and she wants them in alphabetical order. It seems like a time-consuming
+                task but thanks to some aspects of a cool sorting algorithm we know, we’ll be able to get her out of their in no time. That algorithm is the merge sort. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="images/record-player.jpg" alt="Record player">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="p-5">
+            <h2 class="display-4">The merge sort algorithm ...</h2>
+            <p> is a divide and conquer sorting algorithm that’s versatile and reliable. The merge sort breaks down a big problem into many identical sub-problems, solves those sub-problems, and
+              combines the solutions leaving you with the expected result which is our overall problem solved.  What’s easier, delivering packages to an entire city or dividing a city into sections
+              and having groups deliver to the different sections? The latter of course. The easiest way to implement the merge sort is recursively, which for those unfamiliar is a manner of defining
+              a problem or solution to a problem in terms of a simpler version of itself. A simple example would be “find your way home”. First step, if you’re home, stop moving. If not, take one step
+              forward. Now “find your way home”. See how we started the same problem over again? Reaching home is the base case to our solution, we don’t have to continue once we’ve reached the solution. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="p-5">
+            <img class="img-fluid rounded-circle" src="images/people-looking-at-records.jpg" alt="People looking at records">
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">Lily can use the merge sort... </h2>
+            <p>because she can divide her records up and sort them alphabetically. Since our problem is sorting the records, her base case would be that the records are sorted. Knowing that, we can
+              start dividing the records. She’ll want to divide the record in half until the groups they can no longer be halved. Once each record is on it’s own, it’s technically sorted. Imagine,
+              if sorting all 50 records is delivering to a whole city, sorting 2 and 4 records is like delivering to a city section. Once all her records are separated, she can sort each group, combine
+               those groups, and then continue sorting until they are all combined. She’s sorting groups of 2, then 4, then 8, and so on until she’s left with all the records in order. The beauty is,
+               each time she sorts up, the groups have maintained alphabetical order, so it’s much easier to go through the records to alphabetize them and with  way more speed. For another example and
+                visuals of the algorithm use the link below. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class = "container" style = "margin-bottom: 30px; ">
+      <div class = "row align-items-center">
+        <div class = "col-lg-6 order-lg-2">
+          <div class = "text-center">
+            <button type = "button" id = "merge-sort-resource-button" class = "btn btn-primary btn-lg"> Merge Sort Resource </button>
+          </div>
+        </div>
+        <div class = "col-lg-6 order-lg-2">
+          <div class = "text-center">
+            <button type = "button" id = "challenge-button" class = "btn btn-primary btn-lg"> Merge Sort Challenge </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  <script src="amoeba.js"></script>
+  <script src = "../index.js"></script>
+
+</body>
+
+</html>
