@@ -20,8 +20,8 @@ $("#preorder-code-form").on("submit",function(e){
 
 //convert code to preorder format
 function Preorder(code){
-  var arr = code.split("");
-  var newArr = [];
+  const arr = code.split("");
+  let newArr = [];
   newArr = PreorderHelper(arr,0,newArr);
   return newArr.join("");
 }
@@ -38,7 +38,7 @@ function PreorderHelper(a,b,c){
 
 //validates that user provided code correctly in preorder format
 function ValidatePreOrder(input){
-  var chef = Preorder(B().get('challenge3'));
+  const chef = Preorder(B().get('challenge3'));
   return input == chef;
 }
 
@@ -55,7 +55,7 @@ function Code(size){
 
 //shuffles elements of an array without repeating them
 function Shuffle(arr){
-  var i = arr.length;
+  let i = arr.length;
   var j, temp;
   while(--i > 0){
     j = (Math.floor(Math.random() * i-1) + 1);
