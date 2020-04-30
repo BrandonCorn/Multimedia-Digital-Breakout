@@ -105,8 +105,7 @@ var sortableListValidation = function(event,ui){
 function SuccessMessageCode(id,pos){
   const success = ["Great Job! ","You did it! ", "Perfect! ", "Nice Work! "];
   const i = Math.floor((Math.random() * 4));
-  const chef = parseInt(B().get("challenge2").split("")[pos]);
-  $(id).text(success[i]); //+ "The code is: " + chef);
+  $(id).text(success[i]);
   $(id).removeClass("invisible");
 }
 
@@ -160,7 +159,6 @@ $("#q-1-button").on("click",function(){
 function ValidateQuestionTwo(input){
   const chef = B();
   const regEx = new RegExp("(peek)","gi");
-  //var answer = $("#q-2-answer").val();
   if (regEx.test(input)){
     chef.set("challenge-2-question-2","true");
     return true;
@@ -174,7 +172,6 @@ function ValidateQuestionTwo(input){
 $("#q-2-button").on("click",function(){
   let pop = $('#q-2-button').popover({content: "Try again!",});
   const answer = $("#q-2-answer").val();
-  console.log(answer);
   if (ValidateQuestionTwo(answer)){
     pop.popover("dispose");
     pop.popover({content: "You got it!",});
@@ -210,7 +207,7 @@ $("#q-3-button").on("click",function(){
     //SuccessMessageCode(c.mID.c,2);
     pop.popover({content: "You got it!",});
     pop.popover("show");
-    CheckAllQuestions(); 
+    CheckAllQuestions();
   }
   else{
     pop.popover("show");
