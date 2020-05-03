@@ -10,6 +10,14 @@ $("#question-1-form").on("submit",function(e){
   e.preventDefault();
 });
 
+$("#question-2-form").on("submit",function(e){
+  e.preventDefault();
+});
+
+$("#question-3-form").on("submit",function(e){
+  e.preventDefault();
+});
+
 //validates question 1
 function ValidateQuestionOne(input){
   const chef = B();
@@ -35,6 +43,65 @@ $("#q-1-button").on("click",function(){
   }
   else{
     pop.popover("show");
+    $("#question-1-form").trigger("reset");
+  }
+});
+
+//validates question 2
+function ValidateQuestionTwo(input){
+  const chef = B();
+  const regEx = new RegExp("((n(-| )\?log(-| )\?n))","gi");
+  if (regEx.test(input)){
+    chef.set("challenge-4-question-2","true");
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+//calls for validation of question 2
+$("#q-2-button").on("click",function(){
+  const answer = $("#q-2-answer").val();
+  let pop = $("#q-2-button").popover({content: "Try again!",})
+  if (ValidateQuestionTwo(answer)){
+    pop.popover("dispose");
+    pop.popover({content: "You did it!",});
+    pop.popover("show");
+    CheckAllQuestions();
+  }
+  else{
+    pop.popover("show");
+    $("#question-2-form").trigger("reset");
+  }
+});
+
+//validates question 3
+function ValidateQuestionThree(input){
+  const chef = B();
+  const regEx = new RegExp("(recurs)","gi");
+  if (regEx.test(input)){
+    chef.set("challenge-4-question-3","true");
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+//calls for validation of question 3
+$("#q-3-button").on("click",function(){
+  const answer = $("#q-3-answer").val();
+  let pop = $("#q-3-button").popover({content: "Try again!",})
+  if (ValidateQuestionThree(answer)){
+    pop.popover("dispose");
+    pop.popover({content: "You did it!",});
+    pop.popover("show");
+    CheckAllQuestions();
+  }
+  else{
+    pop.popover("show");
+    $("#question-3-form").trigger("reset");
   }
 });
 
@@ -203,6 +270,7 @@ function PreHeat(){
   chef.set("sort-position-round-2",SortRoundTwo(0,1,2)[1] + SortRoundTwo(3,4,5)[1]);
   chef.set("final-sort-position",FinalRound());
 
+  chef.set("challenge-4-sort","false");
   chef.set("challenge-4-question-1","false");
   chef.set("challenge-4-question-2","false");
   chef.set("challenge-4-question-3","false");
@@ -223,17 +291,17 @@ function SetNums(){
 //checks completion of all challenges
 function CheckAllQuestions(){
   const chef = B();
-  const a = chef.get("challenge-1-riddle-answer");
+  const a = chef.get("challenge-4-sort");
   const b = chef.get("challenge-4-question-1");
   const c = chef.get("challenge-4-question-2");
   const d = chef.get("challenge-4-question-3");
-  if (b == "true" && c == "true" && d == "true"){
+  if (a == "true" && b == "true" && c == "true" && d == "true"){
     Swal.fire({
       title: 'Amazing!!',
       text:"You've completed all the challenges and picked up all your friends! Time to carry on the expedition with all your friends! Have a great trip!",
       icon:'success',
     }).then(function(result){
-      window.location.href="google.com";
+      window.location.href="https://www.google.com";
     });
   }
 }
@@ -587,6 +655,9 @@ $(function(){
       var droppable = $(this);
       var draggable = ui.draggable;
       droppable.addClass("complete");
+      const chef = B();
+      chef.set("challenge-4-sort","true");
+      CheckAllQuestions();
       $(this).droppable("disable");
       draggable.clone().appendTo(droppable).draggable({containment: "#drag-constraint",opacity: 0.5,cursor:"grabbing",snapTolerance:30,revert: "invalid",helper:"clone"});
       $(this).find("p");
