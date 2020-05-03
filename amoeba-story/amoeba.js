@@ -1,3 +1,11 @@
+$("#merge-sort-resource-button").on("click",function(){
+  window.open("https://www.thecodingdelight.com/merge-sort-algorithm-tutorial/","blank");
+});
+
+$("#challenge-button").on("click",function(){
+  window.location.href = "merge-sort-challenge.html"; 
+})
+
 //creates a code of given size with no repeated numbers, shuffles, and returns them
 function Code(size,num){
   var arr = [];

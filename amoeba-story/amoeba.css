@@ -87,3 +87,11 @@
   padding-left: 40px;
   height: 700px;
 }
+
+#resource-header{
+  margin-bottom:30px;
+}
+
+#question-1-header, #question-2-header{
+  margin-bottom: 25px;
+}
