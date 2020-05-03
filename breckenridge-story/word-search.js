@@ -699,7 +699,6 @@
 
         if (wordList[i] === curWord) {
           $('.selected').addClass('found');
-          $('.selected').css("color", "red");
           wordList.splice(i,1);
           $('.' + curWord).addClass('wordFound');
         }

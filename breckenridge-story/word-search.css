@@ -66,11 +66,12 @@
 
 /* indicates that the square is part of a word that has been found */
 #puzzle .found {
-  color: $lightGrey;
+  font-weight: bold; 
 }
 
 #puzzle .solved {
   color: $red;
+
 }
 
 /* indicates that all words have been found */
