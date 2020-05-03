@@ -21,5 +21,13 @@
 }
 
 #question-1-header, #question-2-header{
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
+}
+
+.row-code-div{
+  margin-bottom: 45px;
+}
+
+#questions{
+  margin-top: 30px; 
 }
