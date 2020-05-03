@@ -12,6 +12,10 @@
   z-index:2;
 }
 
+#challenge-and-question-1-div{
+  height: 850px;
+}
+
 .cube {
   width: 80px;
   height: 80px;
@@ -94,4 +98,8 @@
 
 #question-1-header, #question-2-header{
   margin-bottom: 25px;
+}
+
+.row-code-div{
+  margin-bottom: 45px; 
 }

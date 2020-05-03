@@ -80,11 +80,8 @@ $("#answer-button").on("click",function(){
 
 
 function CheckAnswer(input){
-  var pop;
   const chef = B();
-  //var regexAnswer = /teeth/
   var regexAnswer = new RegExp("(piano)","gi")
-  //var answerInput = $("#answer-input").val().toLowerCase();
   if (regexAnswer.test(input)){
     chef.set("challenge-1-riddle-answer","true");
     return true;

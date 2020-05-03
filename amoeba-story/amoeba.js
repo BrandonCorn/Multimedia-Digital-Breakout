@@ -3,8 +3,40 @@ $("#merge-sort-resource-button").on("click",function(){
 });
 
 $("#challenge-button").on("click",function(){
-  window.location.href = "merge-sort-challenge.html"; 
-})
+  window.location.href = "merge-sort-challenge.html";
+});
+
+$("#question-1-form").on("submit",function(e){
+  e.preventDefault();
+});
+
+//validates question 1
+function ValidateQuestionOne(input){
+  const chef = B();
+  const regEx = new RegExp("(?=.*base)(?=.*case)","gi");
+  if (regEx.test(input)){
+    chef.set("challenge-4-question-1","true");
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+//calls for validation of question 1
+$("#q-1-button").on("click",function(){
+  const answer = $("#q-1-answer").val();
+  let pop = $("#q-1-button").popover({content: "Try again!",})
+  if (ValidateQuestionOne(answer)){
+    pop.popover("dispose");
+    pop.popover({content: "You did it!",});
+    pop.popover("show");
+    CheckAllQuestions();
+  }
+  else{
+    pop.popover("show");
+  }
+});
 
 //creates a code of given size with no repeated numbers, shuffles, and returns them
 function Code(size,num){
@@ -161,8 +193,8 @@ function FinalRound(){
   return posArr.join("");
 }
 
-//set set values to be used for challenge completion
-function SetTemp(){
+//set values to be used for challenge completion
+function PreHeat(){
   const chef = B();
   chef.set("challenge-4",Code(6));
   chef.set("round-1-code",SortRoundOne());
@@ -170,6 +202,10 @@ function SetTemp(){
   chef.set("round-2-code",SortRoundTwo(0,1,2)[0] + SortRoundTwo(3,4,5)[0]);
   chef.set("sort-position-round-2",SortRoundTwo(0,1,2)[1] + SortRoundTwo(3,4,5)[1]);
   chef.set("final-sort-position",FinalRound());
+
+  chef.set("challenge-4-question-1","false");
+  chef.set("challenge-4-question-2","false");
+  chef.set("challenge-4-question-3","false");
 }
 
 //set the text of each cube to corresponding code value
@@ -184,13 +220,30 @@ function SetNums(){
   $("#val-6").text(val[5]);
 }
 
+//checks completion of all challenges
+function CheckAllQuestions(){
+  const chef = B();
+  const a = chef.get("challenge-1-riddle-answer");
+  const b = chef.get("challenge-4-question-1");
+  const c = chef.get("challenge-4-question-2");
+  const d = chef.get("challenge-4-question-3");
+  if (b == "true" && c == "true" && d == "true"){
+    Swal.fire({
+      title: 'Amazing!!',
+      text:"You've completed all the challenges and picked up all your friends! Time to carry on the expedition with all your friends! Have a great trip!",
+      icon:'success',
+    }).then(function(result){
+      window.location.href="google.com";
+    });
+  }
+}
 
 window.addEventListener('load',function(){
   const chef = B();
   if(chef.get("reachstory4") == "false"){
     chef.set("reachstory4","true");
   }
-  SetTemp();
+  PreHeat();
   SetNums();
 });
 
