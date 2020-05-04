@@ -66,7 +66,8 @@
 
 /* indicates that the square is part of a word that has been found */
 #puzzle .found {
-  font-weight: bold; 
+  font-weight: bold;
+  color: red; 
 }
 
 #puzzle .solved {
