@@ -1,8 +1,20 @@
+$("#animation").modal();
+$("#container").hide();
+
+
+function closeModal(){
+  $("#container").show();
+  $("#animation").modal("hide");
+}
+
+
 window.addEventListener('load',function(){
   const chef = B();
   if(chef.get("reachstory1") == "false"){
+    document.getElementById("video").addEventListener("ended",closeModal,true);
     chef.set("reachstory1","true");
   }
+  else{ closeModal(); }
   SetSuccessValues();
 });
 

@@ -62,17 +62,9 @@ $("#linked-list-comic-con").on('click',function(){
 });
 
 
-$("#animation").modal();
-$("#container").hide();
 
-
-function closeModal(){
-  $("#container").show();
-  $("#animation").modal("hide");
-}
 
 window.addEventListener('load',function(){
-  document.getElementById("video").addEventListener("ended",closeModal,true);
   const chef = B();
   NavCheck(chef);
 });
