@@ -67,6 +67,10 @@ $("#video").on("ended",function(){
   window.location.href = "comic-con-story/linked-list-comic-con.html";
 });
 
+$("#closeModal").on("click",function(){
+  window.location.href = "comic-con-story/linked-list-comic-con.html"; 
+})
+
 
 
 
