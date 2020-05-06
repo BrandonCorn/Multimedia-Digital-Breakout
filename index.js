@@ -58,6 +58,12 @@ function NavCheck(inst){
 
 //button to open link to comic-con linked list story
 $("#linked-list-comic-con").on('click',function(){
+  //window.location.href = "comic-con-story/linked-list-comic-con.html";
+
+});
+
+
+$("#video").on("ended",function(){
   window.location.href = "comic-con-story/linked-list-comic-con.html";
 });
 

@@ -79,7 +79,7 @@
           the best Summer possible and make it to all their friends!? If so then let’s begin..</p>
       </div>
       <div class = "row" style = "margin-top: 105px">
-        <button type="button" id = "linked-list-comic-con" class="btn btn-primary btn-lg btn-block"> Begin </button>
+        <button type="button" id = "linked-list-comic-con" class="btn btn-primary btn-lg btn-block" data-toggle= "modal" data-target="#myModal"> Begin </button>
       </div>
     </div>
   </section>
@@ -89,7 +89,6 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="p-5">
-
           </div>
         </div>
         <div class="col-lg-6">
@@ -99,6 +98,26 @@
       </div>
     </div>
   </section>
+
+  <div class="modal fade" id="myModal" role="dialog" aria-labelledby = "myModalLabel">
+    <div class = "modal-dialog modal-lg" role = "document">
+      <div class = "modal-content">
+        <div class = "modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class = "modal-body">
+            <video autoplay id = "video" style="border-radius:15px;width:100%; height: auto; margin:0 auto; ">
+              <source src = "driving-van-road-trip.mp4" type = "video/mp4">
+                Your browser doesn't support html5 video tag.
+            </video>
+        </div>
+        <div class = "modal-footer">
+          <button type = "button" class = "btn btn-default" data-dismiss = "modal"> Close </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Footer -->
   <footer class="py-5 bg-black">
