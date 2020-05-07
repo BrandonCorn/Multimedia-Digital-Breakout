@@ -59,11 +59,10 @@ function CheckAllQuestions(){
       text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
       icon:'success',
       confirmButtonText: "Continue"
-    }).then(function(result){
-      if(result.value){
-        $("#myModal").modal("show");
-        $("#video")[0].play();
-      }
+    }).then((result) => {
+      $("#myModal").modal("show");
+      $("#video")[0].play();
+
     });
   }
 }

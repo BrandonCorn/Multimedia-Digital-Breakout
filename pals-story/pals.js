@@ -72,11 +72,24 @@ function CheckAllQuestions(){
       title:'Great work!',
       text:'You\'re getting the hang of it! Now let\'s make our way to Colorado to hit the slopes with Adeline!',
       icon:'success'
-    }).then(function(){
-      window.location.href = '../breckenridge-story/binary-tree-breckenridge.html';
+    }).then((result) =>{
+      
+        $("#myModal").modal("show");
+        $("#video")[0].play();
+
     });
   }
 }
+
+//after animation plays page goes to next story
+$("#video").on("ended",function(){
+  window.location.href = '../breckenridge-story/binary-tree-breckenridge.html';
+});
+
+//click continue button while animation playing to skip to next story
+$("#closeModal").on("click",function(){
+  window.location.href = '../breckenridge-story/binary-tree-breckenridge.html';
+});
 
 //make list sortable
 $( function() {
