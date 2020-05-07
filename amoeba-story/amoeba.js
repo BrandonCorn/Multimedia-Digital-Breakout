@@ -322,8 +322,9 @@ window.addEventListener('load',function(){
   if(chef.get("reachstory4") == "false"){
     chef.set("reachstory4","true");
   }
-  SetNums();
   PreHeat();
+  SetNums();
+
 });
 
 
