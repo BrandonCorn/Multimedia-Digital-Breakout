@@ -302,7 +302,7 @@ function CheckAllQuestions(){
       icon:'success',
     }).then((result) => {
       $("#myModal").modal("show");
-      $("#video")[0].play(); 
+      $("#video")[0].play();
     });
   }
 }
@@ -322,8 +322,8 @@ window.addEventListener('load',function(){
   if(chef.get("reachstory4") == "false"){
     chef.set("reachstory4","true");
   }
-  PreHeat();
   SetNums();
+  PreHeat();
 });
 
 
