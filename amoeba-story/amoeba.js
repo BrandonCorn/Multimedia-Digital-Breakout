@@ -300,11 +300,22 @@ function CheckAllQuestions(){
       title: 'Amazing!!',
       text:"You've completed all the challenges and picked up all your friends! Time to carry on the expedition with all your friends! Have a great trip!",
       icon:'success',
-    }).then(function(result){
-      window.location.href="https://www.google.com";
+    }).then((result) => {
+      $("#myModal").modal("show");
+      $("#video")[0].play(); 
     });
   }
 }
+
+//after animation plays page goes to next story
+$("#video").on("ended",function(){
+  window.location.href = "../index.html";
+});
+
+//click continue button while animation playing to skip to next story
+$("#closeModal").on("click",function(){
+  window.location.href = "../index.html";
+});
 
 window.addEventListener('load',function(){
   const chef = B();
