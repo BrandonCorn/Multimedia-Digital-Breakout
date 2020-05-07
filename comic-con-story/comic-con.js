@@ -62,13 +62,12 @@ function CheckAllQuestions(){
     }).then(function(result){
       if(result.value){
         $("#myModal").modal("show");
-        $("#video")[0].play(); 
+        $("#video")[0].play();
       }
     });
   }
 }
 
-//show and play animation
 
 //after animation plays page goes to next story
 $("#video").on("ended",function(){
