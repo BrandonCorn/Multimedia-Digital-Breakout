@@ -59,16 +59,16 @@ function NavCheck(inst){
 //button to open link to comic-con linked list story
 $("#linked-list-comic-con").on('click',function(){
   //window.location.href = "comic-con-story/linked-list-comic-con.html";
-
+  $('#videoMainPage')[0].play(); 
 });
 
 
-$("#video").on("ended",function(){
+$("#videoMainPage").on("ended",function(){
   window.location.href = "comic-con-story/linked-list-comic-con.html";
 });
 
-$("#closeModal").on("click",function(){
-  window.location.href = "comic-con-story/linked-list-comic-con.html"; 
+$("#closeModalMainPage").on("click",function(){
+  window.location.href = "comic-con-story/linked-list-comic-con.html";
 })
 
 

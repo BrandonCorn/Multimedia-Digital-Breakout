@@ -58,11 +58,27 @@ function CheckAllQuestions(){
       title: 'Great Job!',
       text:'Awesome work! Now let\'s head to Tennesee so we can meet up with Nick!',
       icon:'success',
+      confirmButtonText: "Continue"
     }).then(function(result){
-      window.location.href="../pals-story/queue-pals.html";
+      if(result.value){
+        $("#myModal").modal("show");
+        $("#video")[0].play(); 
+      }
     });
   }
 }
+
+//show and play animation
+
+//after animation plays page goes to next story
+$("#video").on("ended",function(){
+  window.location.href="../pals-story/queue-pals.html";
+});
+
+//click continue button while animation playing to skip to next story
+$("#closeModal").on("click",function(){
+  window.location.href="../pals-story/queue-pals.html";
+});
 
 //validates the answer for correctness, makes visible link to next challenge upon positive validation
 $("#answer-button").on("click",function(){
