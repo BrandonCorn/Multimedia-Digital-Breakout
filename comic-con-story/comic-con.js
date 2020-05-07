@@ -62,7 +62,6 @@ function CheckAllQuestions(){
     }).then((result) => {
       $("#myModal").modal("show");
       $("#video")[0].play();
-
     });
   }
 }

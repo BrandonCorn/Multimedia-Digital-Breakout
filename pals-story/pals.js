@@ -73,10 +73,8 @@ function CheckAllQuestions(){
       text:'You\'re getting the hang of it! Now let\'s make our way to Colorado to hit the slopes with Adeline!',
       icon:'success'
     }).then((result) =>{
-      
-        $("#myModal").modal("show");
-        $("#video")[0].play();
-
+      $("#myModal").modal("show");
+      $("#video")[0].play();
     });
   }
 }
