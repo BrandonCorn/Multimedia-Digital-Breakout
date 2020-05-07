@@ -65,7 +65,15 @@ function Shuffle(arr){
   }
 }
 
+//after animation plays page goes to next story
+$("#video").on("ended",function(){
+  window.location.href = "../amoeba-story/merge-sort-amoeba-records.html";
+});
 
+//click continue button while animation playing to skip to next story
+$("#closeModal").on("click",function(){
+  window.location.href = "../amoeba-story/merge-sort-amoeba-records.html";
+});
 
 $("#preorder-code-button").on("click",function(){
   $("#preorder-code-button").popover("dispose");
@@ -77,8 +85,9 @@ $("#preorder-code-button").on("click",function(){
       title:'Awesome',
       text: 'Let\'s head out to meet up with Lily at Amoeba Record Store in San Franciso!',
       icon: 'success'
-    }).then(function(){
-      window.location.href = "../amoeba-story/merge-sort-amoeba-records.html";
+    }).then((result) => {
+      $("#myModal").modal("show");
+      $("#video")[0].play();
     });
   }
   else{
