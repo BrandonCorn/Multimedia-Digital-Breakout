@@ -29,7 +29,14 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-    <a class="navbar-brand" href="index.html">Data Structures</a>
+    <a class="navbar-brand" href="../index.html">Data Structures</a>
+    <a class = "navbar-brand dropdown-toggle nav-link" data-toggle = "dropdown" href = "#" role = "button" aria-haspopup = "true" aria-expanded = "false"> Game Audio </a>
+    <div class = "dropdown-menu">
+      <audio controls id = "game-audio" class = "dropdown-item" >
+
+      </audio>
+    </div>
+
     <div class="container">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -153,7 +160,8 @@
     <!-- /.container -->
   </footer>
 
-  <audio src = "music/game-track-1.mp3" autostart = "true" loop = "true"> </audio>
+
+
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

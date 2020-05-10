@@ -78,11 +78,34 @@ $(".btn").on("click",function(){
   $(".cc-window").css("display","none");
 })
 
+$(function(){
+  var audio = document.getElementById("game-audio");
+  var tracks = ["game-track-1.mp3", "game-track-2.mp3", "game-track-3.mp3", "game-track-4.mp3", "game-track-5.mp3", "game-track-6.mp3", "game-track-7.mp3"]
+  var i = Math.floor(Math.random() * tracks.length);
+  var innerHtml = "<source src = '../music/" + tracks[i] + "'> </source>"
+  $("#game-audio").html(innerHtml);
+  audio.addEventListener("ended",function(){
+    if (i < tracks.length){
+      innerHtml = "<source src = '../music/" + tracks[i] + "'></source>";
+      $("#game-audio").html(innerHtml);
+      audio.load();
+      audio.play();
+      i++;
+    }
+    else{
+      i = 0;
+      innerHtml = "<source src = '../music/'" + tracks[i] + "></source>";
+      $("#game-audio").html(innerHtml);
+      audio.load();
+      audio.play();
+    }
+  });
+});
+
 window.addEventListener('load',function(){
   const chef = B();
   NavCheck(chef);
   if (chef.get("cookie-consent") != "true"){
-    $(".cc-window").css("display",""); 
+    $(".cc-window").css("display","");
   }
-
 });
