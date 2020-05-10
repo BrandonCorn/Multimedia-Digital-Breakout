@@ -1,3 +1,4 @@
+
 $("#merge-sort-resource-button").on("click",function(){
   window.open("https://www.thecodingdelight.com/merge-sort-algorithm-tutorial/","blank");
 });
@@ -307,6 +308,16 @@ function CheckAllQuestions(){
   }
 }
 
+window.addEventListener('load',function(){
+  const chef = B();
+  if(chef.get("reachstory4") == "false"){
+    chef.set("reachstory4","true");
+  }
+  PreHeat();
+  SetNums();
+  init(); 
+});
+
 //after animation plays page goes to next story
 $("#video").on("ended",function(){
   window.location.href = "../index.html";
@@ -317,15 +328,6 @@ $("#closeModal").on("click",function(){
   window.location.href = "../index.html";
 });
 
-window.addEventListener('load',function(){
-  const chef = B();
-  if(chef.get("reachstory4") == "false"){
-    chef.set("reachstory4","true");
-  }
-  PreHeat();
-  SetNums();
-
-});
 
 
 //allows draggable to be dropped on blocks up to each one being in an individual block
@@ -464,6 +466,7 @@ $(function(){
 });
 
 //allows first round of sorting blocks to be placed properly
+function init(){
 $(function(){
   $("#sort-round-one-1").droppable({
     drop: function(event,ui){
@@ -677,3 +680,4 @@ $(function(){
     accept: "#cube-" + chef.get("final-sort-position")[5]
   })
 });
+}
